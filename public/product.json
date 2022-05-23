@@ -1,0 +1,56 @@
+[
+  {
+    "_id": "6289ae5b4567789557addb5c",
+    "name": "Portable Cool Room",
+    "image": "http://placehold.it/32x32",
+    "description": "Custom Built Portable Cool Rooms and Freezer Rooms - Fridgair industries has custom designed skid mounted cold rooms due to increasing demand for portable cold rooms. The skid rooms can be lifted using a forklift and can be transported using a flat bed truck.\r\n",
+    "price": "$263",
+    "minimumQuantity": 13,
+    "availableQuantity": 126
+  },
+  {
+    "_id": "6289ae5b439fc49ff09a2212",
+    "name": "Cool Room Accessories",
+    "image": "http://placehold.it/32x32",
+    "description": "We offer complete range of cool room accessories. At a great value, you can make sure that our product selections are high quality and fairly priced, ensuring that you will get the most use out of our products..\r\n",
+    "price": "$111",
+    "minimumQuantity": 13,
+    "availableQuantity": 132
+  },
+  {
+    "_id": "6289ae5b09df2a2b8e9fe103",
+    "name": "Prepainted Galvanised Coils",
+    "image": "http://placehold.it/32x32",
+    "description": "We provide the best products and High Quality Prepainted Galvanised Coils & Color Bond to our customers with Competitive Price. Product can be categorize into Building, Baking Varnish, Cold Storage, Purification and etc.\r\n",
+    "price": "$38",
+    "minimumQuantity": 13,
+    "availableQuantity": 200
+  },
+  {
+    "_id": "6289ae5bb3446a9ceb509b44",
+    "name": "Condensor & Unit Cooler",
+    "image": "http://placehold.it/32x32",
+    "description": "We have a wide range of Cold Fan Condensor to work for your specific tastes. Our products sell well in both home and abroad and won favorable comments, you can buy them satisfactorily and use them confidently.\r\n",
+    "price": "$19",
+    "minimumQuantity": 13,
+    "availableQuantity": 108
+  },
+  {
+    "_id": "6289ae5b9b8b7f6ce2e1dece",
+    "name": "China Axial Fan Set & Ebm Fan Set",
+    "image": "http://placehold.it/32x32",
+    "description": "We offer a massive inventory of Axial Fan Set and accessories for your specific needs. Our company is your best option for high quality Axial Fan Set from the top manufacturers and brands in the market.\r\n",
+    "price": "$155",
+    "minimumQuantity": 12,
+    "availableQuantity": 179
+  },
+  {
+    "_id": "6289ae5b7f0e3519c85a03cd",
+    "name": "EBM Q Motor & China Q Motor & Video Fan",
+    "image": "http://placehold.it/32x32",
+    "description": "Nisi eiusmod dolor nisi occaecat occaecat dolore duis. Do Lorem eu fugiat enim. Qui labore duis non id et eiusmod commodo id nisi adipisicing sunt nisi anim voluptate. Dolore proident ad duis pariatur excepteur aute commodo. Labore ipsum aute consequat dolore ullamco culpa incididunt adipisicing tempor excepteur est.\r\n",
+    "price": "$1,439.99",
+    "minimumQuantity": 10,
+    "availableQuantity": 129
+  }
+]
