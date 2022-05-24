@@ -26,7 +26,7 @@ const MyProfile = () => {
       linkedlnProfile: event.target.profile.value,
     };
 
-    fetch("http://localhost:5000/userProfile", {
+    fetch("https://limitless-dusk-82358.herokuapp.com/userProfile", {
       method: "POST",
       headers: {
         "content-type": "application/json",

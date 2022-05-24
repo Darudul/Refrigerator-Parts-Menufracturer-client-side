@@ -19,6 +19,7 @@ import DashBoard from "./Pages/DashBoard/DashBoard";
 import MyOrders from "./Pages/DashBoard/MyOrders";
 import AddReview from "./Pages/DashBoard/AddReview";
 import MyProfile from "./Pages/DashBoard/MyProfile";
+import ManageAllOrders from "./Pages/DashBoard/ManageAllOrders";
 
 function App() {
   return (
@@ -49,9 +50,27 @@ function App() {
             </RequireAuth>
           }
         >
-          <Route index element={<RequireAuth><MyOrders></MyOrders></RequireAuth>}></Route>
-          <Route path="review" element={<RequireAuth><AddReview></AddReview></RequireAuth>}></Route>
+          <Route
+            index
+            element={
+              <RequireAuth>
+                <MyOrders></MyOrders>
+              </RequireAuth>
+            }
+          ></Route>
+          <Route
+            path="review"
+            element={
+              <RequireAuth>
+                <AddReview></AddReview>
+              </RequireAuth>
+            }
+          ></Route>
           <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
+          <Route
+            path="manageallorder"
+            element={<ManageAllOrders></ManageAllOrders>}
+          ></Route>
         </Route>
         <Route
           path="about"
