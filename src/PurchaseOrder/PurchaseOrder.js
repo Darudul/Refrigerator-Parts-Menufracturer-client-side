@@ -13,7 +13,7 @@ const PurchaseOrder = () => {
     setModal(true);
   };
   useEffect(() => {
-    const url = `http://localhost:5000/tool/${Id}`;
+    const url = `https://limitless-dusk-82358.herokuapp.com/tool/${Id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setTool(data));
@@ -31,7 +31,7 @@ const PurchaseOrder = () => {
   //   if (newQuantity < 0) {
   //     alert("quantity can not be negative");
   //   } else {
-  //     const url = `http://localhost:5000/tool/${Id}`;
+  //     const url = `https://limitless-dusk-82358.herokuapp.com/tool/${Id}`;
   //     console.log(url);
   //     fetch(url, {
   //       method: "PUT",
