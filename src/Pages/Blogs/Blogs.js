@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 
 const Blogs = () => {
   return (
-    <div>
+    <div className='max-w-7xl mx-auto'>
       <div className="mt-10 max-w-7xl mx-auto mb-10 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
         <div className="bg-base-100 shadow-xl">
           <div className="card-body">

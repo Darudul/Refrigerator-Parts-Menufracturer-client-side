@@ -1,40 +1,41 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
-const ManageAllOrders = () => {
+const ManageProduct = () => {
   const navigate = useNavigate();
-  const [allOrders, SetAllOrders] = useState([]);
+  const [manageProduct, setManageProduct] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/bookingOrder")
+    fetch("http://localhost:5000/tool")
       .then((res) => res.json())
       .then((data) => {
-        SetAllOrders(data);
+        setManageProduct(data);
       });
-  }, [allOrders]);
+  }, [manageProduct]);
 
   const addNewItem = () => {
     navigate("/addnewitem");
   };
   const deleteItem = (id) => {
-    const success = window.confirm("Are you sure you want to delete this item");
+    const success = toast("Your item deleted success fully");
     if (success) {
-      const url = `http://localhost:5000/bookingOrder/${id}`;
+      const url = `http://localhost:5000/manage/${id}`;
       fetch(url, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
-          const restItem = allOrders.filter((item) => item._id !== id);
-          SetAllOrders(restItem);
+          const restItem = manageProduct.filter((item) => item._id !== id);
+          setManageProduct(restItem);
         });
     }
   };
   return (
     <div className="max-w-7xl mx-auto">
       <div>
-        <h5>{allOrders.length}</h5>
+        <h5>{manageProduct.length}</h5>
         <div class="overflow-x-auto">
           <table class="table w-full">
             <thead>
@@ -47,13 +48,13 @@ const ManageAllOrders = () => {
               </tr>
             </thead>
             <tbody>
-              {allOrders.map((order, index) => (
+              {manageProduct.map((order, index) => (
                 <tr key={order._id}>
                   <th>{index + 1}</th>
-                  <td>{order.itemName}</td>
-                  <td>{order.itemPrice}</td>
-                  <td>{order.itemMinimumQuantity}</td>
-                  <td>{order.itemAvailableQuantity}</td>
+                  <td>{order.name}</td>
+                  <td>{order.price}</td>
+                  <td>{order.minimumQuantity}</td>
+                  <td>{order.availableQuantity}</td>
                   <td>
                     <button
                       className=" btn btn-xs "
@@ -80,4 +81,4 @@ const ManageAllOrders = () => {
   );
 };
 
-export default ManageAllOrders;
+export default ManageProduct;

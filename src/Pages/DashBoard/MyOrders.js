@@ -21,7 +21,7 @@ const MyOrders = () => {
     }
   }, [user]);
   return (
-    <div>
+    <div className='max-w-7xl mx-auto'>
       <h2>My Order: {orders.length}</h2>
       <div class="overflow-x-auto">
         <table class="table w-full">
