@@ -24,6 +24,7 @@ import AddProduct from "./Pages/DashBoard/AddProduct";
 import ManageProduct from "./Pages/DashBoard/ManageProduct";
 import AllUsers from "./Pages/DashBoard/AllUsers";
 import RequireAdmin from "./LoginSignup/Login/RequreAdmin";
+import Payment from "./Pages/DashBoard/Payment";
 
 function App() {
   return (
@@ -78,6 +79,7 @@ function App() {
               </RequireAdmin>
             }
           ></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route
             path="manageallorder"
             element={

@@ -38,6 +38,8 @@ const BookingModal = ({ modal, setModal }) => {
     const address = event.target.address.value;
 
     const booking = {
+      name: name,
+      price: price,
       userName,
       email,
       quantity,
