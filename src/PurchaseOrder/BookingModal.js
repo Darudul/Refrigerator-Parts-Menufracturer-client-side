@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 // import { ToastContainer, toast } from "react-toastify";
 import { toast } from "react-toastify";
@@ -8,22 +8,43 @@ const BookingModal = ({ modal, setModal }) => {
   const { name, _id, description, price, minimumQuantity, availableQuantity } =
     modal;
   const [user, loading, error] = useAuthState(auth);
+  const [isDisabled, setDisabled] = useState(false);
+
   const handleBooking = (event) => {
     event.preventDefault();
     console.log(name, _id);
 
-    const booking = {
-      itemId: _id,
-      itemName: name,
-      itemDescription: description,
-      itemPrice: price,
-      itemMinimumQuantity: minimumQuantity,
-      itemAvailableQuantity: availableQuantity,
-      email: user.email,
-      phone: event.target.phone.value,
-      address: event.target.address.value,
-    };
+    // const booking = {
+    //   itemId: _id,
+    //   itemName: name,
+    //   itemDescription: description,
+    //   itemPrice: price,
+    //   // minimumQuantity,
+    //   // if(minimumQuantity<)
+    //   itemAvailableQuantity: availableQuantity,
+    //   email: user.email,
+    //   phone: event.target.phone.value,
+    //   address: event.target.address.value,
+    // };
 
+    const userName = event.target.name.value;
+    const email = event.target.email.value;
+    const quantity = event.target.minimum.value;
+    if (quantity < minimumQuantity || quantity > availableQuantity) {
+      setDisabled(true);
+      return;
+    }
+    const phone = event.target.phone.value;
+    const address = event.target.address.value;
+
+    const booking = {
+      userName,
+      email,
+      quantity,
+      phone,
+      address,
+    };
+    console.log(booking);
     fetch("https://limitless-dusk-82358.herokuapp.com/booking", {
       method: "POST",
       headers: {
@@ -61,11 +82,19 @@ const BookingModal = ({ modal, setModal }) => {
                 value={user?.displayName || ""}
                 className="input input-bordered w-full max-w-xs"
               />
+
               <input
                 type="email"
                 name="email"
                 disabled
                 value={user?.email || ""}
+                className="input input-bordered w-full max-w-xs"
+              />
+
+              <input
+                type="text"
+                name="minimum"
+                defaultValue={minimumQuantity}
                 className="input input-bordered w-full max-w-xs"
               />
 
@@ -85,6 +114,7 @@ const BookingModal = ({ modal, setModal }) => {
                 type="submit"
                 value="Submit"
                 className="btn btn-secondary w-full max-w-xs"
+                disabled={isDisabled}
               />
             </form>
           </>

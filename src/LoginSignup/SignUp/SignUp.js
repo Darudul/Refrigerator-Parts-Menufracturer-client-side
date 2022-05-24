@@ -157,24 +157,12 @@ const SignUp = () => {
             </div>
 
             {signInError}
-            {/* <input
+
+            <input
               className="btn w-full max-w-xs text-white bg-cyan-500"
               type="submit"
               value="SignUp"
-            /> */}
-
-            {user3 ? (
-              <button
-                className="bg-warning  fw-bold border-0 rounded-pill px-3"
-                onClick={logout}
-              ></button>
-            ) : (
-              <input
-                className="btn w-full max-w-xs text-white bg-cyan-500"
-                type="submit"
-                value="SignUp"
-              />
-            )}
+            />
           </form>
           <p>
             <small>

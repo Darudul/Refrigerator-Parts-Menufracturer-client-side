@@ -23,30 +23,6 @@ const PurchaseOrder = () => {
     return <Loading></Loading>;
   }
 
-  // const handleUpdateUser = (event) => {
-  //   event.preventDefault();
-  //   const numbers = event.target.num.value;
-  //   const newQuantity = parseInt(newTools?.minimumQuantity) + parseInt(numbers);
-  //   const quantityy = { newQuantity };
-  //   if (newQuantity < 0) {
-  //     alert("quantity can not be negative");
-  //   } else {
-  //     const url = `https://limitless-dusk-82358.herokuapp.com/tool/${Id}`;
-  //     console.log(url);
-  //     fetch(url, {
-  //       method: "PUT",
-  //       headers: {
-  //         "content-type": "application/json",
-  //       },
-  //       body: JSON.stringify(quantityy),
-  //     })
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         console.log("success", data);
-  //         event.target.reset();
-  //       });
-  //   }
-  // };
   return (
     <div class="max-w-7xl mx-auto mt-10 bg-base-100 shadow-xl mb-96">
       <div class="card lg:card-side bg-base-100 shadow-xl">

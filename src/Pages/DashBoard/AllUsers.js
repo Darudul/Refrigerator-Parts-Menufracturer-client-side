@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useQuery } from "react-query";
 import Loading from "../../LoginSignup/Loading/Loading";
+import DeleteConfirmModal from "./DeleteConfirmModal";
 import UserRow from "./UserRow";
 
-
 const AllUsers = () => {
+  // const [deletingDoctor, setDeletingDoctor] = useState(null);
+  const [modal, setModal] = useState({});
   const {
     data: users,
     isLoading,
@@ -22,6 +24,13 @@ const AllUsers = () => {
   }
   return (
     <div>
+      {modal && (
+        <DeleteConfirmModal
+          setModal={setModal}
+          user={modal}
+          refetch={refetch}
+        ></DeleteConfirmModal>
+      )}
       <h2 className="text-2xl">All Users: {users.length}</h2>
       <div class="overflow-x-auto">
         <table class="table w-full">
@@ -33,8 +42,14 @@ const AllUsers = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map((user) => (
-              <UserRow key={user._id} user={user} refetch={refetch}></UserRow>
+            {users.map((user, index) => (
+              <UserRow
+                key={user._id}
+                index={index}
+                user={user}
+                refetch={refetch}
+                setModal={setModal}
+              ></UserRow>
             ))}
           </tbody>
         </table>
