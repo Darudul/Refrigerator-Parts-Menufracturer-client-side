@@ -6,7 +6,12 @@ const ManageAllOrders = () => {
   const navigate = useNavigate();
   const [allOrders, SetAllOrders] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/bookingOrder")
+    fetch("http://localhost:5000/bookingOrder", {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         SetAllOrders(data);

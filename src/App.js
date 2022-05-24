@@ -23,6 +23,7 @@ import ManageAllOrders from "./Pages/DashBoard/ManageAllOrders";
 import AddProduct from "./Pages/DashBoard/AddProduct";
 import ManageProduct from "./Pages/DashBoard/ManageProduct";
 import AllUsers from "./Pages/DashBoard/AllUsers";
+import RequireAdmin from "./LoginSignup/Login/RequreAdmin";
 
 function App() {
   return (
@@ -71,17 +72,36 @@ function App() {
           <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
           <Route
             path="alluser"
-            element={<AllUsers></AllUsers>}
+            element={
+              <RequireAdmin>
+                <AllUsers></AllUsers>
+              </RequireAdmin>
+            }
           ></Route>
           <Route
             path="manageallorder"
-            element={<ManageAllOrders></ManageAllOrders>}
+            element={
+              <RequireAdmin>
+                <ManageAllOrders></ManageAllOrders>
+              </RequireAdmin>
+            }
           ></Route>
           <Route
             path="manageproduct"
-            element={<ManageProduct></ManageProduct>}
+            element={
+              <RequireAdmin>
+                <ManageProduct></ManageProduct>
+              </RequireAdmin>
+            }
           ></Route>
-          <Route path="addnewitem" element={<AddProduct></AddProduct>}></Route>{" "}
+          <Route
+            path="addnewitem"
+            element={
+              <RequireAdmin>
+                <AddProduct></AddProduct>
+              </RequireAdmin>
+            }
+          ></Route>{" "}
         </Route>
 
         <Route

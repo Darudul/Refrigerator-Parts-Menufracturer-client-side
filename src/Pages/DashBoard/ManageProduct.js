@@ -7,7 +7,12 @@ const ManageProduct = () => {
   const navigate = useNavigate();
   const [manageProduct, setManageProduct] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/tool")
+    fetch("http://localhost:5000/tool", {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         setManageProduct(data);

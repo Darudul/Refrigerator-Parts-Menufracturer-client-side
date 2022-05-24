@@ -34,7 +34,11 @@ const AddProduct = () => {
     };
     // console.log(addProduct);
     const url = `http://localhost:5000/addItem`;
-    const { data } = await axios.post(url, addProduct);
+    const { data } = await axios.post(url, addProduct, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    });
     event.target.reset();
   };
   return (
