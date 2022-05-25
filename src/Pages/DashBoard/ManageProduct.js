@@ -7,7 +7,7 @@ const ManageProduct = () => {
   const navigate = useNavigate();
   const [manageProduct, setManageProduct] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/tool", {
+    fetch("http://localhost:5000/tools", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -41,8 +41,8 @@ const ManageProduct = () => {
     <div className="max-w-7xl mx-auto">
       <div>
         <h5>{manageProduct.length}</h5>
-        <div class="overflow-x-auto">
-          <table class="table w-full">
+        <div className="overflow-x-auto">
+          <table className="table w-full">
             <thead>
               <tr>
                 <th></th>

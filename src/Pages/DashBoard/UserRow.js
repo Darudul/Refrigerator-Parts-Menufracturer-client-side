@@ -30,7 +30,7 @@ const UserRow = ({ user, refetch, index, setModal }) => {
       <td>{email}</td>
       <td>
         {role !== "admin" && (
-          <button onClick={makeAdmin} class="btn btn-xs">
+          <button onClick={makeAdmin} className="btn btn-xs">
             Make Admin
           </button>
         )}
@@ -39,7 +39,7 @@ const UserRow = ({ user, refetch, index, setModal }) => {
         <label
           onClick={() => setModal(user)}
           for="deleteModal"
-          class="btn modal-button"
+          className="btn modal-button"
         >
           Delete
         </label>

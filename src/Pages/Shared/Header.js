@@ -104,8 +104,8 @@ const Header = () => {
             {partItems}
           </ul>
         </div>
-        <div class="">
-          <div class="w-10 rounded-full">
+        <div className="">
+          <div className="w-10 rounded-full">
             <Link to="/">
               <img src={navbar} className="" />
             </Link>

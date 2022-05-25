@@ -13,7 +13,7 @@ const PurchaseOrder = () => {
     setModal(true);
   };
   useEffect(() => {
-    const url = `https://limitless-dusk-82358.herokuapp.com/tool/${Id}`;
+    const url = `http://localhost:5000/tool/${Id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setTool(data));
@@ -24,16 +24,16 @@ const PurchaseOrder = () => {
   }
 
   return (
-    <div class="max-w-7xl mx-auto mt-10 bg-base-100 shadow-xl mb-96">
-      <div class="card lg:card-side bg-base-100 shadow-xl">
+    <div className="max-w-7xl mx-auto mt-10 bg-base-100 shadow-xl mb-96">
+      <div className="card lg:card-side bg-base-100 shadow-xl">
         <figure>
           <img
             src="https://api.lorem.space/image/album?w=400&h=400"
             alt="Album"
           />
         </figure>
-        <div class="card-body">
-          <h2 class="card-title">Name:{newTools.name}</h2>
+        <div className="card-body">
+          <h2 className="card-title">Name:{newTools.name}</h2>
           <p>{newTools.description}</p>
           <p>Price: {newTools.price}</p>
           <p>Minimumquantity: {newTools.minimumQuantity}</p>

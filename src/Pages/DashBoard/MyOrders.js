@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import { signOut } from "firebase/auth";
 
 const MyOrders = () => {
+  const [user] = useAuthState(auth);
+  const navigate =useNavigate()
   // const {} = modal;
   const [modal, setModal] = useState(false);
 
   const [orders, setOrders] = useState([]);
-  const [user] = useAuthState(auth);
   useEffect(() => {
     if (user) {
       fetch(`http://localhost:5000/booking?email=${user.email}`, {
@@ -17,7 +19,15 @@ const MyOrders = () => {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
       })
-        .then((res) => res.json())
+        .then((res) => {
+          console.log("res", res);
+          if (res.status === 401 || res.status === 403) {
+            signOut(auth);
+            localStorage.removeItem("accessToken");
+            navigate("/");
+          }
+          return res.json();
+        })
         .then((data) => setOrders(data));
     }
   }, [user]);
@@ -38,8 +48,8 @@ const MyOrders = () => {
   return (
     <div className="">
       <h2>My Order: {orders.length}</h2>
-      <div class="overflow-x-auto">
-        <table class="table w-full">
+      <div className="overflow-x-auto">
+        <table className="table w-full">
           <thead>
             <tr>
               <th></th>
@@ -53,7 +63,7 @@ const MyOrders = () => {
           </thead>
           <tbody>
             {orders.map((order, index) => (
-              <tr>
+              <tr key={order._id}>
                 <th>{index + 1}</th>
                 <td>{order.itemName}</td>
                 <td>{order.email}</td>
@@ -62,11 +72,11 @@ const MyOrders = () => {
                 <td>
                   {order.price && !order.paid && (
                     <Link to={`/dashboard/payment/${order._id}`}>
-                      <button class="btn btn-xs">Pay</button>
+                      <button className="btn btn-xs">Pay</button>
                     </Link>
                   )}
                   {order.price && order.paid && (
-                    <span class="text-success">Paid</span>
+                    <span className="text-success">Paid</span>
                   )}
                 </td>
                 <td>
@@ -80,10 +90,10 @@ const MyOrders = () => {
                     <input
                       type="checkbox"
                       id="my-modal-6"
-                      class="modal-toggle"
+                      className="modal-toggle"
                     />
-                    <div class="modal modal-bottom sm:modal-middle">
-                      <div class="modal-box">
+                    <div className="modal modal-bottom sm:modal-middle">
+                      <div className="modal-box">
                         <label
                           htmlFor="my-modal-6"
                           className="btn btn-sm btn-circle absolute right-2 top-2"
