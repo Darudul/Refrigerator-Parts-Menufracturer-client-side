@@ -39,7 +39,7 @@ const BookingModal = ({ modal, setModal }) => {
 
     const booking = {
       name: name,
-      price: price,
+      price,
       userName,
       email,
       quantity,

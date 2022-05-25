@@ -64,7 +64,7 @@ function App() {
             }
           ></Route>
           <Route
-            path='myorder'
+            path="myorder"
             element={
               <RequireAuth>
                 <MyOrders></MyOrders>

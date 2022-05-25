@@ -14,6 +14,7 @@ const PurchaseOrder = () => {
   };
   useEffect(() => {
     const url = `https://limitless-dusk-82358.herokuapp.com/tool/${Id}`;
+
     fetch(url)
       .then((res) => res.json())
       .then((data) => setTool(data));
@@ -33,11 +34,12 @@ const PurchaseOrder = () => {
           />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">Name:{newTools.name}</h2>
-          <p>{newTools.description}</p>
-          <p>Price: {newTools.price}</p>
-          <p>Minimumquantity: {newTools.minimumQuantity}</p>
-          <p>Availablequantity: {newTools.availableQuantity}</p>
+          <h2>order order:{Id}</h2>
+          <h2 className="card-title">Name:{newTools?.name}</h2>
+          <p>{newTools?.description}</p>
+          <p>Price: {newTools?.price}</p>
+          <p>Minimumquantity: {newTools?.minimumQuantity}</p>
+          <p>Availablequantity: {newTools?.availableQuantity}</p>
           <div className="card-actions">
             {modal && (
               <BookingModal modal={modal} setModal={setModal}></BookingModal>
