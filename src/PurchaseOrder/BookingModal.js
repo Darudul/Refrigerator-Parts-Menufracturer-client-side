@@ -47,7 +47,7 @@ const BookingModal = ({ modal, setModal }) => {
       address,
     };
     console.log(booking);
-    fetch("http://localhost:5000/booking", {
+    fetch("https://limitless-dusk-82358.herokuapp.com/booking", {
       method: "POST",
       headers: {
         "content-type": "application/json",

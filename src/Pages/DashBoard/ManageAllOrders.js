@@ -6,7 +6,7 @@ const ManageAllOrders = () => {
   const navigate = useNavigate();
   const [allOrders, SetAllOrders] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/bookingOrder", {
+    fetch("https://limitless-dusk-82358.herokuapp.com/bookingOrder", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -24,7 +24,7 @@ const ManageAllOrders = () => {
   const deleteItem = (id) => {
     const success = window.confirm("Are you sure you want to delete this item");
     if (success) {
-      const url = `http://localhost:5000/bookingOrder/${id}`;
+      const url = `https://limitless-dusk-82358.herokuapp.com/bookingOrder/${id}`;
       fetch(url, {
         method: "DELETE",
       })

@@ -33,7 +33,7 @@ const AddProduct = () => {
       availableQuantity,
     };
     // console.log(addProduct);
-    const url = `http://localhost:5000/addItem`;
+    const url = `https://limitless-dusk-82358.herokuapp.com/addItem`;
     const { data } = await axios.post(url, addProduct, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

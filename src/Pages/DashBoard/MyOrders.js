@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import { signOut } from "firebase/auth";
 
 const MyOrders = () => {
   const [user] = useAuthState(auth);
-  const navigate =useNavigate()
+  const navigate = useNavigate();
   // const {} = modal;
   const [modal, setModal] = useState(false);
 
   const [orders, setOrders] = useState([]);
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/booking?email=${user.email}`, {
-        method: "GET",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      })
+      fetch(
+        `https://limitless-dusk-82358.herokuapp.com/booking?email=${user.email}`,
+        {
+          method: "GET",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        }
+      )
         .then((res) => {
           console.log("res", res);
           if (res.status === 401 || res.status === 403) {
@@ -33,7 +36,7 @@ const MyOrders = () => {
   }, [user]);
 
   const deleteItem = (id) => {
-    const url = `http://localhost:5000/booking?email=${user.email}`;
+    const url = `https://limitless-dusk-82358.herokuapp.com/booking?email=${user.email}`;
     fetch(url, {
       method: "DELETE",
     })

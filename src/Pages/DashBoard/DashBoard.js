@@ -23,7 +23,7 @@ const DashBoard = () => {
           {!admin && (
             <>
               <li>
-                <Link to="/dashboard">My Orders</Link>
+                <Link to="/dashboard/myorder">My Orders</Link>
               </li>
               <li>
                 <Link to="/dashboard/review">Add Reviews</Link>

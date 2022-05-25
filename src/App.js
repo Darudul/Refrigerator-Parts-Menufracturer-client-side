@@ -25,6 +25,7 @@ import ManageProduct from "./Pages/DashBoard/ManageProduct";
 import AllUsers from "./Pages/DashBoard/AllUsers";
 import RequireAdmin from "./LoginSignup/Login/RequreAdmin";
 import Payment from "./Pages/DashBoard/Payment";
+import Welcome from "./Pages/DashBoard/Welcome";
 
 function App() {
   return (
@@ -56,6 +57,14 @@ function App() {
         >
           <Route
             index
+            element={
+              <RequireAuth>
+                <Welcome></Welcome>
+              </RequireAuth>
+            }
+          ></Route>
+          <Route
+            path='myorder'
             element={
               <RequireAuth>
                 <MyOrders></MyOrders>

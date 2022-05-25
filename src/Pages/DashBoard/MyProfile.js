@@ -8,7 +8,9 @@ const MyProfile = () => {
   const [user] = useAuthState(auth);
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/user?email=${user.email}`)
+      fetch(
+        `https://limitless-dusk-82358.herokuapp.com/user?email=${user.email}`
+      )
         .then((res) => res.json())
         .then((data) => setProfile(data));
     }
@@ -24,7 +26,7 @@ const MyProfile = () => {
       linkedlnProfile: event.target.profile.value,
     };
 
-    fetch("http://localhost:5000/userProfile", {
+    fetch("https://limitless-dusk-82358.herokuapp.com/userProfile", {
       method: "POST",
       headers: {
         "content-type": "application/json",

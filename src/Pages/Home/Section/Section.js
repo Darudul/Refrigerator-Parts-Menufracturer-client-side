@@ -20,7 +20,7 @@ const Section = () => {
         <p>Subtitle</p>
         <hr />
         <p>
-          machines, refrigerators and air conditioners. We have made the
+          machines, refrigerators and air conditijiihujighh. We have made the
           production line for washing machine,air conditioner,refrigerator and
           dishwasher etc.for many overseas famous companies. We have the strong
           self-development ability, advanced equipments and excellent
