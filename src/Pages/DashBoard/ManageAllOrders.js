@@ -36,10 +36,25 @@ const ManageAllOrders = () => {
         });
     }
   };
+  const handleShipped = (id) => {
+    const status = { status: "shipped" };
+    fetch(`http://localhost:5000/api/orders/shipped/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+      body: JSON.stringify(status),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
   return (
     <div className="max-w-7xl mx-auto">
       <div>
-        <h5>{allOrders.length}</h5>
+        <h5 className="text-xl font-bold text-red-300 mt-5 mb-5">
+          Manage All Orders
+        </h5>
         <div className="overflow-x-auto">
           <table className="table w-full">
             <thead>
@@ -62,20 +77,27 @@ const ManageAllOrders = () => {
                   <td>{order.itemMinimumQuantity}</td>
                   <td>{order.itemAvailableQuantity}</td>
                   <td>
-                    <button
-                      className=" btn btn-xs "
-                      onClick={() => deleteItem(order._id)}
-                    >
-                      Delete
-                    </button>
-                  </td>
-                  <td>
-                    <button
-                      className=" btn btn-xs "
-                      onClick={() => addNewItem(order._id)}
-                    >
-                      Add A Product
-                    </button>
+                    {order?.paid ? (
+                      <>
+                        {order?.status ? (
+                          <p className="text-green-500">Delivered</p>
+                        ) : (
+                          <button
+                            onClick={() => handleShipped(order._id)}
+                            className="text-orange-500 hover:underline hover:cursor-pointer"
+                          >
+                            Shipped
+                          </button>
+                        )}
+                      </>
+                    ) : (
+                      <button
+                        onClick={() => deleteItem(order._id)}
+                        className="text-red-500 hover:underline hover:cursor-pointer"
+                      >
+                        Cancel
+                      </button>
+                    )}
                   </td>
                 </tr>
               ))}

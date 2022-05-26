@@ -40,7 +40,7 @@ const ManageProduct = () => {
   return (
     <div className="max-w-7xl mx-auto">
       <div>
-        <h5>{manageProduct.length}</h5>
+        <h5 className="text-xl font-bold my-10">Manage All Products</h5>
         <div className="overflow-x-auto">
           <table className="table w-full">
             <thead>
@@ -66,14 +66,6 @@ const ManageProduct = () => {
                       onClick={() => deleteItem(order._id)}
                     >
                       Delete
-                    </button>
-                  </td>
-                  <td>
-                    <button
-                      className=" btn btn-xs "
-                      onClick={() => addNewItem(order._id)}
-                    >
-                      Add A Product
                     </button>
                   </td>
                 </tr>

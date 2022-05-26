@@ -113,9 +113,7 @@ const AddProduct = () => {
               />
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">
-                Add Profile Information
-              </button>
+              <button className="btn btn-primary">Add Product</button>
             </div>
           </form>
         </div>

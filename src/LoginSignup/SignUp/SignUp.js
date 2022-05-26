@@ -11,6 +11,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import Loading from "../Loading/Loading";
 import { signOut } from "@firebase/auth";
 import useToken from "../../useToken/useToken";
+import MyOrders from "../../Pages/DashBoard/MyOrders";
 
 const SignUp = () => {
   const [user3, load] = useAuthState(auth);

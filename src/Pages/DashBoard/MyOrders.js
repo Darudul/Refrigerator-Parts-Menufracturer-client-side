@@ -83,7 +83,9 @@ const MyOrders = () => {
                       <span className="text-success">Paid</span>
                       <p>
                         Transaction id:{" "}
-                        <span className="text-success">{order.transactionId}</span>
+                        <span className="text-success">
+                          {order.transactionId}
+                        </span>
                       </p>
                     </div>
                   )}

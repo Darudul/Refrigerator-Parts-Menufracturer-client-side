@@ -32,7 +32,7 @@ const DeleteConfirmModal = ({ user, refetch, setModal }) => {
             You've been selected for a chance to get one year of subscription to
             use Wikipedia for free!
           </p>
-          <button onClick={() => handleDelete(user.email)}>yes</button>
+          <button onClick={() => handleDelete(user.email)} className='bg-orange-500 px-4 text-white font-bold rounded-full'>Yes</button>
         </div>
       </div>
     </div>

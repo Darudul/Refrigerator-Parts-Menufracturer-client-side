@@ -47,7 +47,7 @@ const Tool = ({ tool }) => {
         <div className="card-actions mt-3">
           <button
             onClick={() => purchaseOrder(_id)}
-            className="btn btn btn-info"
+            className="btn btn-info"
             tool={tool}
           >
             Purchase Now

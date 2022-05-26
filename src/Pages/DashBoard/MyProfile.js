@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
+import "./MyProfile.css";
 
 const MyProfile = () => {
   const [profile, setProfile] = useState([]);
@@ -39,25 +40,12 @@ const MyProfile = () => {
       });
   };
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto my-profile">
       <div className="mt-10">
         <h2 className="mb-10">My Profile Information</h2>
         <div className="overflow-x-auto">
-          <table className="table w-80">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{user.displayName}</td>
-                <td>{user.email}</td>
-              </tr>
-            </tbody>
-          </table>
-          <div className="divider w-3/5 mx-auto">OR</div>
+          <img src="" alt="" />
+          
         </div>
       </div>
 
