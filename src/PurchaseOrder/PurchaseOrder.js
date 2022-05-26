@@ -55,23 +55,6 @@ const PurchaseOrder = () => {
           </div>
         </div>
       </div>
-
-      {/* <h4 className="ms-5 mb-0 text-muted">Update quantity</h4>
-      <form className="ms-4 w-25 mt-5 style-form" onSubmit={handleUpdateUser}>
-        <input
-          className="w-50 border border-secondary rounded"
-          type="text"
-          name="num"
-          placeholder="quantity"
-          required
-        />
-        <br />
-        <input
-          className="w-50 border-0 bg-secondary text-white p-2 rounded"
-          type="submit"
-          value="Restock Items"
-        />
-      </form> */}
     </div>
   );
 };

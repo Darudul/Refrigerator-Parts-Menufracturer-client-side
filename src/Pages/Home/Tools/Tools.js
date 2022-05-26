@@ -14,6 +14,7 @@ const Tools = () => {
   }, []);
   const items = [...toolss];
   const newTools = items.reverse();
+  const sliceTools = newTools.slice(0, 6);
 
   return (
     <div className="card bg-base-100 mt-10 mb-10">
@@ -22,7 +23,7 @@ const Tools = () => {
       </h2>
 
       <div className="max-w-7xl mx-auto set-grid">
-        {newTools.map((tool) => (
+        {sliceTools.map((tool) => (
           <div key={tool._id}>
             <Tool tool={tool}></Tool>
           </div>

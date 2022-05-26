@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
+import ManageProductModal from "./ManageProductModal";
 
 const ManageProduct = () => {
   const navigate = useNavigate();
+  const [deleteOrder, setDeleteOrder] = useState({});
+  console.log(deleteOrder);
   const [manageProduct, setManageProduct] = useState([]);
   useEffect(() => {
     fetch("https://limitless-dusk-82358.herokuapp.com/tools", {
@@ -23,22 +26,27 @@ const ManageProduct = () => {
     navigate("/addnewitem");
   };
   const deleteItem = (id) => {
-    const success = toast("Your item deleted success fully");
-    if (success) {
-      const url = `https://limitless-dusk-82358.herokuapp.com/manage/${id}`;
-      fetch(url, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          const restItem = manageProduct.filter((item) => item._id !== id);
-          setManageProduct(restItem);
-        });
-    }
+    const url = `https://limitless-dusk-82358.herokuapp.com/manage/${id}`;
+    fetch(url, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        const restItem = manageProduct.filter((item) => item._id !== id);
+        setManageProduct(restItem);
+        setDeleteOrder({});
+      });
   };
   return (
     <div className="max-w-7xl mx-auto">
+      {deleteOrder._id && (
+        <ManageProductModal
+          setDeleteOrder={setDeleteOrder}
+          deleteItem={deleteItem}
+          deleteOrder={deleteOrder}
+        ></ManageProductModal>
+      )}
       <div>
         <h5 className="text-xl font-bold my-10">Manage All Products</h5>
         <div className="overflow-x-auto">
@@ -61,12 +69,13 @@ const ManageProduct = () => {
                   <td>{order.minimumQuantity}</td>
                   <td>{order.availableQuantity}</td>
                   <td>
-                    <button
-                      className=" btn btn-xs "
-                      onClick={() => deleteItem(order._id)}
+                    <label
+                      onClick={() => setDeleteOrder(order)}
+                      htmlFor="deleOrder"
+                      className="btn btn-sm bg-orange-500	border-none"
                     >
-                      Delete
-                    </button>
+                      Cancel
+                    </label>
                   </td>
                 </tr>
               ))}

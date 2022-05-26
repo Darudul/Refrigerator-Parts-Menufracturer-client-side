@@ -26,13 +26,15 @@ const DeleteConfirmModal = ({ user, refetch, setModal }) => {
             ✕
           </label>
           <h3 className="text-lg font-bold">
-            Congratulations random Interner user!
+            Are You Sure You Want To Delete Item
           </h3>
-          <p className="py-4">
-            You've been selected for a chance to get one year of subscription to
-            use Wikipedia for free!
-          </p>
-          <button onClick={() => handleDelete(user.email)} className='bg-orange-500 px-4 text-white font-bold rounded-full'>Yes</button>
+
+          <button
+            onClick={() => handleDelete(user.email)}
+            className="bg-orange-500 px-4 text-white font-bold rounded-full mt-5"
+          >
+            Delete
+          </button>
         </div>
       </div>
     </div>

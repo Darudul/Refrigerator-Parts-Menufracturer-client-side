@@ -23,30 +23,65 @@ const DashBoard = () => {
           {!admin && (
             <>
               <li>
-                <Link to="/dashboard/myorder">My Orders</Link>
+                <Link
+                  to="/dashboard/myorder"
+                  className="font-bold text-slate-700"
+                >
+                  My Orders
+                </Link>
               </li>
               <li>
-                <Link to="/dashboard/review">Add Reviews</Link>
+                <Link
+                  to="/dashboard/review"
+                  className="font-bold text-slate-700"
+                >
+                  Add Reviews
+                </Link>
               </li>
               <li>
-                <Link to="/dashboard/myprofile">My Profile</Link>
+                <Link
+                  to="/dashboard/myprofile"
+                  className="font-bold text-slate-700"
+                >
+                  My Profile
+                </Link>
               </li>
             </>
           )}
           {admin && (
             <>
               <li>
-                <Link to="/dashboard/manageproduct">Manage Products</Link>
+                <Link
+                  to="/dashboard/manageproduct"
+                  className="font-bold text-slate-700"
+                >
+                  Manage Products
+                </Link>
               </li>
               <li>
-                <Link to="/dashboard/manageallorder">Manage All Orders</Link>
+                <Link
+                  to="/dashboard/manageallorder"
+                  className="font-bold text-slate-700"
+                >
+                  Manage All Orders
+                </Link>
               </li>
               <li>
-                <Link to="/dashboard/addnewitem">Add A Product</Link>
+                <Link
+                  to="/dashboard/addnewitem"
+                  className="font-bold text-slate-700"
+                >
+                  Add A Product
+                </Link>
               </li>
 
               <li>
-                <Link to="/dashboard/alluser">Make Admin</Link>
+                <Link
+                  to="/dashboard/alluser"
+                  className="font-bold text-slate-700"
+                >
+                  Make Admin
+                </Link>
               </li>
             </>
           )}

@@ -19,34 +19,41 @@ const MyProfile = () => {
 
   const handleUser = (event) => {
     event.preventDefault();
-
-    const myProfile = {
+    const userProfile = {
+      name: user?.displayName,
+      email: user?.email,
       education: event.target.education.value,
       location: event.target.location.value,
       phone: event.target.phone.value,
       linkedlnProfile: event.target.profile.value,
     };
-
-    fetch("https://limitless-dusk-82358.herokuapp.com/userProfile", {
-      method: "POST",
+    fetch("http://localhost:5000/api/users/profile", {
+      method: "PUT",
       headers: {
-        "content-type": "application/json",
+        "Content-Type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
-      body: JSON.stringify(myProfile),
+      body: JSON.stringify(userProfile),
     })
       .then((res) => res.json())
-      .then((data) => {
-        toast("user added successfully");
-      });
+      .then((data) => console.log(data));
   };
+
   return (
     <div className="max-w-7xl mx-auto my-profile">
       <div className="mt-10">
-        <h2 className="mb-10">My Profile Information</h2>
-        <div className="overflow-x-auto">
-          <img src="" alt="" />
-          
-        </div>
+        <h2 className="text-xl font-bold mt-4 mb-4 text-orange-600">
+          My Profile Information
+        </h2>
+
+        <p>
+          <span className="label-text text-xl font-bold"> Name:</span>
+          {user?.displayName}
+        </p>
+        <p>
+          <span className="label-text text-xl font-bold">Email: </span>
+          {user?.email}
+        </p>
       </div>
 
       <div className="mt-10">
@@ -55,7 +62,7 @@ const MyProfile = () => {
             <form onSubmit={handleUser}>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Education</span>
+                  <span className="label-text">Education:</span>
                 </label>
                 <input
                   type="text"

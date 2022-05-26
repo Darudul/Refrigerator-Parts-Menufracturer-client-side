@@ -43,7 +43,10 @@ const AddProduct = () => {
   };
   return (
     <div className="max-w-7xl mx-auto mt-10 mb-16">
-      <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-slate-300">
+      <h3 className="text-2xl text-orange-600 mt-5 mb-5 font-bold">
+        Please Add Product From Here
+      </h3>
+      <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-slate-200">
         <div className="card-body">
           <form onSubmit={addProduct}>
             <div className="form-control">
@@ -53,7 +56,7 @@ const AddProduct = () => {
               <input
                 type="text"
                 name="img"
-                placeholder="Educational background"
+                placeholder="Image"
                 className="input input-bordered"
               />
             </div>
@@ -64,7 +67,7 @@ const AddProduct = () => {
               <input
                 type="text"
                 name="itemname"
-                placeholder="Educational background"
+                placeholder="Product Name"
                 className="input input-bordered"
               />
             </div>
@@ -75,7 +78,7 @@ const AddProduct = () => {
               <input
                 type="text"
                 name="description"
-                placeholder="Add your location"
+                placeholder="Product Desription"
                 className="input input-bordered"
               />
             </div>
@@ -86,7 +89,7 @@ const AddProduct = () => {
               <input
                 type="number"
                 name="price"
-                placeholder="Your Number"
+                placeholder="Product Price"
                 className="input input-bordered"
               />
             </div>
@@ -96,7 +99,7 @@ const AddProduct = () => {
               </label>
               <input
                 type="text"
-                name="quantity"
+                name="Minimum Quantity"
                 placeholder="Add your location"
                 className="input input-bordered"
               />
@@ -108,12 +111,12 @@ const AddProduct = () => {
               <input
                 type="text"
                 name="available"
-                placeholder="Add your location"
+                placeholder="Available Quantity"
                 className="input input-bordered"
               />
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Add Product</button>
+              <button className="btn btn-primary">Add A Product</button>
             </div>
           </form>
         </div>

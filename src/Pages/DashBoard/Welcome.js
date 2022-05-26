@@ -3,7 +3,7 @@ import React from "react";
 const Welcome = () => {
   return (
     <div>
-      <h4>Welcome to this menufracturer manage all products</h4>
+      <h4>Welcome to menufracturer company</h4>
     </div>
   );
 };

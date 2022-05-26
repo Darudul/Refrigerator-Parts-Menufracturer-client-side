@@ -114,7 +114,7 @@ const BookingModal = ({ modal, setModal }) => {
               />
               <input
                 type="submit"
-                value="Submit"
+                value="Purchase Order"
                 className="btn btn-secondary w-full max-w-xs"
                 disabled={isDisabled}
               />

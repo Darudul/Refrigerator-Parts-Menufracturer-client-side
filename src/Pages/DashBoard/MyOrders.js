@@ -3,13 +3,13 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import { signOut } from "firebase/auth";
+import MyOrderModal from "./MyOrderModal";
 
 const MyOrders = () => {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
-  // const {} = modal;
-  const [modal, setModal] = useState(false);
-
+  const [deleteOrder, setDeleteOrder] = useState({});
+  console.log(deleteOrder);
   const [orders, setOrders] = useState([]);
   useEffect(() => {
     if (user) {
@@ -45,13 +45,23 @@ const MyOrders = () => {
         console.log(data);
         const restItem = orders.filter((item) => item._id !== id);
         setOrders(restItem);
-        setModal(true);
+        setDeleteOrder({});
       });
   };
+
   return (
     <div className="">
-      <h2>My Order: {orders.length}</h2>
-      <div className="overflow-x-auto">
+      {deleteOrder._id && (
+        <MyOrderModal
+          setDeleteOrder={setDeleteOrder}
+          deleteItem={deleteItem}
+          deleteOrder={deleteOrder}
+        ></MyOrderModal>
+      )}
+      <h2 className="text-xl font-bold mt-4 mb-4 text-orange-600">
+        My Booking Order
+      </h2>
+      <div className="overflow-x-auto max-w-7xl mx-auto">
         <table className="table w-full">
           <thead>
             <tr>
@@ -75,7 +85,9 @@ const MyOrders = () => {
                 <td>
                   {order.price && !order.paid && (
                     <Link to={`/dashboard/payment/${order._id}`}>
-                      <button className="btn btn-xs">Pay</button>
+                      <button className="btn btn-sm bg-orange-500 border-none">
+                        Pay
+                      </button>
                     </Link>
                   )}
                   {order.price && order.paid && (
@@ -90,30 +102,17 @@ const MyOrders = () => {
                     </div>
                   )}
                 </td>
+
                 <td>
-                  <div>
-                    <button
-                      className=" btn btn-xs "
-                      onClick={() => deleteItem(order._id)}
+                  {!order.transactionId && (
+                    <label
+                      onClick={() => setDeleteOrder(order)}
+                      htmlFor="deleOrder"
+                      className="btn btn-sm bg-orange-500	border-none"
                     >
-                      Delete
-                    </button>
-                    <input
-                      type="checkbox"
-                      id="my-modal-6"
-                      className="modal-toggle"
-                    />
-                    <div className="modal modal-bottom sm:modal-middle">
-                      <div className="modal-box">
-                        <label
-                          htmlFor="my-modal-6"
-                          className="btn btn-sm btn-circle absolute right-2 top-2"
-                        >
-                          ✕
-                        </label>
-                      </div>
-                    </div>
-                  </div>
+                      Cancel
+                    </label>
+                  )}
                 </td>
               </tr>
             ))}
