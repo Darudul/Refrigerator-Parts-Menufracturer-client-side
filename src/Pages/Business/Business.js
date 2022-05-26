@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFlagUsa } from "react-icons/fa";
+import "./Business.css";
 const Business = () => {
   return (
     <div className="mt-10 mb-10">
@@ -9,7 +10,7 @@ const Business = () => {
       <h3 className="text-center mb-24 font-bold">
         TRY TO UNDERSTAND USERS EXPECTATION
       </h3>
-      <div className="max-w-7xl mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto grid business-style">
         <div>
           <h1 className="text-4xl text-cyan-500 mb-4">
             <FaFlagUsa></FaFlagUsa>

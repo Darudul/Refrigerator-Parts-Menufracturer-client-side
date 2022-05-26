@@ -46,17 +46,19 @@ const ManageAllOrders = () => {
               <tr>
                 <th></th>
                 <th>ItemName</th>
-                <th>ItemPrice</th>
-                <th>MinimumQuantity</th>
-                <th>AvailableQuantity</th>
+                <th>Email</th>
+                <th>ItemName</th>
+                <th>Price</th>
               </tr>
             </thead>
             <tbody>
               {allOrders.map((order, index) => (
                 <tr key={order._id}>
                   <th>{index + 1}</th>
-                  <td>{order.itemName}</td>
-                  <td>{order.itemPrice}</td>
+                  <td>{order.userName}</td>
+                  <td>{order.email}</td>
+                  <td>{order.name}</td>
+                  <td>{order.price}</td>
                   <td>{order.itemMinimumQuantity}</td>
                   <td>{order.itemAvailableQuantity}</td>
                   <td>

@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./CompanyProfile.css";
 const CompanyProfile = () => {
   return (
     <div>
@@ -20,7 +20,7 @@ const CompanyProfile = () => {
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
               et a id nisi.
             </p>
-            <div className="mt-32 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            <div className="mt-32 grid company-image">
               <div
                 className="rounded-lg"
                 style={{
@@ -61,14 +61,14 @@ const CompanyProfile = () => {
           </div>
         </div>
       </div>
-      <div className="bg-slate-100 pb-10">
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10  ">
+      <div className="bg-slate-100 pb-10 company-profile">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  ">
           <div className="mt-10 max-w-7xl mx-auto mb-10">
             <h1 className="text-xl font-bold">Authentication</h1>
             <p>
               <br />
             </p>
-            <p className="ml-8">Business Type: Manufacturer/Factory</p> <br />
+            <p className="ml-8 ">Business Type: Manufacturer/Factory</p> <br />
             <p className="ml-8">
               Main Products: <span>Refrigerator parts</span>
             </p>{" "}
@@ -85,13 +85,12 @@ const CompanyProfile = () => {
           </div>
         </div>
         <div className="container mx-auto mb-10 bg-slate-200 rounded py-5">
-          <div className="max-w-2xl mx-auto">
-            <button className="btn btn-error rounded-full px-8">Error</button>
-            <button className="btn btn-error ml-16 rounded-full px-8">
-              Error
+          <div className="max-w-2xl business mx-auto">
+            <button className="btn btn-error rounded-full px-8 text-white margin">
+              Contact Suplier
             </button>
-            <button className="btn btn-error ml-16 rounded-full px-8">
-              Error
+            <button className="btn btn-accent ml-16 rounded-full px-8 text-white">
+              Book a factory Tour
             </button>
           </div>
         </div>

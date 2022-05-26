@@ -1,10 +1,11 @@
 import React from "react";
+import "./Tools/Banner.css";
 const Banner = () => {
   return (
     <div
-      className="hero"
+      className="hero banner"
       style={{
-        background: `url(${"https://ibb.co/kD83JqW"})`,
+        background: `url(${"https://i.ibb.co/K0d8Zmh/technician-repairing-computer-computer-hardware-repairing-upgrade-technology.png"})`,
         backgroundSize: "cover",
         height: "700px",
       }}

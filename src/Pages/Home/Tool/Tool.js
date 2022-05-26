@@ -18,7 +18,7 @@ const Tool = ({ tool }) => {
     navigate(`/purchaseorder/${id}`);
   };
   return (
-    <div className="card card-compact w-96 bg-base-100 shadow-xl">
+    <div className="card card-compact w-86 bg-base-100 shadow-xl">
       <figure>
         <img
           src="https://api.lorem.space/image/shoes?w=400&h=225"
@@ -26,17 +26,31 @@ const Tool = ({ tool }) => {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{name}</h2>
+        <h2 className="text-xl text-indigo-700 font-bold"> {name}</h2>
         <p>{description}</p>
-        <p>{price}</p>
-        <p>minimumQuantity</p>
-        <div className="card-actions justify-end">
+        <p>
+          <span className="text-indigo-700 font-bold">Price: </span>
+          {price}
+        </p>
+        <p>
+          <span className="text-indigo-700 font-bold">
+            Minimum Order Quantity:
+          </span>{" "}
+          {minimumQuantity}
+        </p>
+        <p>
+          <span className="text-indigo-700 font-bold">
+            Available Order Quantity:
+          </span>{" "}
+          {availableQuantity}
+        </p>
+        <div className="card-actions mt-3">
           <button
             onClick={() => purchaseOrder(_id)}
-            className="btn btn-primary"
+            className="btn btn btn-info"
             tool={tool}
           >
-            Book Now
+            Purchase Now
           </button>
         </div>
       </div>

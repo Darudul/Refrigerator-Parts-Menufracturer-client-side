@@ -1,0 +1,14 @@
+.set-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 576px) {
+  .set-grid {
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

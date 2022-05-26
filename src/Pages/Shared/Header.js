@@ -33,10 +33,10 @@ const Header = () => {
       <li>
         <Link to="/login">
           {user ? (
-            <div className="">
-              <p>{user?.displayName}</p>
+            <div className="flex flex-row ">
+              <p className="mr-2 font-bold">{user?.displayName}</p>
               <button
-                className="btn-sm bg-green-300 border-0 rounded text-white fw-bold"
+                className="btn-sm bg-teal-400 border-0 rounded text-white font-bold"
                 onClick={logout}
               >
                 LogOut
@@ -44,11 +44,11 @@ const Header = () => {
             </div>
           ) : (
             <div>
-              <button className=" btn-sm bg-green-300 border-0 rounded text-white fw-bold">
+              <button className=" btn-sm bg-teal-400 border-0 rounded text-white fw-bold">
                 Login
               </button>
               <Link to="/signup">
-                <button className="ml-3 btn-sm bg-green-300 border-0 rounded text-white fw-bold">
+                <button className="ml-3 btn-sm bg-teal-400 border-0 rounded text-white fw-bold">
                   SignUp
                 </button>
               </Link>
@@ -107,7 +107,8 @@ const Header = () => {
         <div className="">
           <div className="w-10 rounded-full">
             <Link to="/">
-              <img src={navbar} className="" />
+              {/* <img src={navbar} className="" /> */}
+              <h2 className="tex-xl font-bold">Menufracturer</h2>
             </Link>
           </div>
         </div>
