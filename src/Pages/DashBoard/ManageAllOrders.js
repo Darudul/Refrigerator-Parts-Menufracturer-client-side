@@ -8,7 +8,7 @@ const ManageAllOrders = () => {
   const [allOrders, SetAllOrders] = useState([]);
   const [deleteOrder, setDeleteOrder] = useState({});
   useEffect(() => {
-    fetch("http://localhost:5000/bookingOrder", {
+    fetch("https://limitless-dusk-82358.herokuapp.com/bookingOrder", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -24,7 +24,7 @@ const ManageAllOrders = () => {
     navigate("/addnewitem");
   };
   const deleteItem = (id) => {
-    const url = `http://localhost:5000/bookingOrder/${id}`;
+    const url = `https://limitless-dusk-82358.herokuapp.com/bookingOrder/${id}`;
     fetch(url, {
       method: "DELETE",
     })
@@ -38,14 +38,17 @@ const ManageAllOrders = () => {
   };
   const handleShipped = (id) => {
     const status = { status: "shipped" };
-    fetch(`http://localhost:5000/api/orders/shipped/${id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-      body: JSON.stringify(status),
-    })
+    fetch(
+      `https://limitless-dusk-82358.herokuapp.com/api/orders/shipped/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+        body: JSON.stringify(status),
+      }
+    )
       .then((res) => res.json())
       .then((data) => console.log(data));
   };
@@ -87,13 +90,13 @@ const ManageAllOrders = () => {
                     {order?.paid ? (
                       <>
                         {order?.status ? (
-                          <p className="text-green-500">Delivered</p>
+                          <p className="text-green-500">Shipped</p>
                         ) : (
                           <button
                             onClick={() => handleShipped(order._id)}
                             className="text-orange-500 hover:underline hover:cursor-pointer"
                           >
-                            Shipped
+                            Pending
                           </button>
                         )}
                       </>
@@ -104,6 +107,31 @@ const ManageAllOrders = () => {
                         className="btn btn-sm bg-orange-500	border-none"
                       >
                         Cancel
+                      </label>
+                    )}
+                  </td>
+
+                  <td>
+                    {order?.paid ? (
+                      <>
+                        {order?.transactionId ? (
+                          <p className="text-green-500">Paid</p>
+                        ) : (
+                          <button
+                            onClick={() => handleShipped(order._id)}
+                            className="text-orange-500 hover:underline hover:cursor-pointer"
+                          >
+                            UnPaid
+                          </button>
+                        )}
+                      </>
+                    ) : (
+                      <label
+                        onClick={() => setDeleteOrder(order)}
+                        htmlFor="deleOrder"
+                        className="btn btn-sm bg-orange-500	border-none"
+                      >
+                      UnPaid
                       </label>
                     )}
                   </td>

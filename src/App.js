@@ -26,6 +26,7 @@ import AllUsers from "./Pages/DashBoard/AllUsers";
 import RequireAdmin from "./LoginSignup/Login/RequreAdmin";
 import Payment from "./Pages/DashBoard/Payment";
 import Welcome from "./Pages/DashBoard/Welcome";
+import MyPortfolio2 from "./Pages/MyPortfolio2/MyPortfolio2";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route path="myportfolio2" element={<MyPortfolio2 />} />
         <Route
           path="dashboard"
           element={

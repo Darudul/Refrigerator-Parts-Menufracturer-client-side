@@ -74,7 +74,14 @@ const DashBoard = () => {
                   Add A Product
                 </Link>
               </li>
-
+              <li>
+                <Link
+                  to="/dashboard/myprofile"
+                  className="font-bold text-slate-700"
+                >
+                  My Profile
+                </Link>
+              </li>
               <li>
                 <Link
                   to="/dashboard/alluser"

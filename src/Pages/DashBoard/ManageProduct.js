@@ -10,7 +10,7 @@ const ManageProduct = () => {
   // console.log(deleteOrder);
   const [manageProduct, setManageProduct] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/tools", {
+    fetch("https://limitless-dusk-82358.herokuapp.com/tools", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

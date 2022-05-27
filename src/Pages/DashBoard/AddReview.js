@@ -4,7 +4,7 @@ import Review from "./Review";
 const AddReview = () => {
   const [toolss, setTools] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/tools")
+    fetch("https://limitless-dusk-82358.herokuapp.com/tools")
       .then((res) => res.json())
       .then((data) => {
         setTools(data);

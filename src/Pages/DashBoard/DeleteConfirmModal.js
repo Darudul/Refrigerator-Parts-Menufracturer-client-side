@@ -1,7 +1,10 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
+import auth from "../../firebase.init";
+import Loading from "../../LoginSignup/Loading/Loading";
 
-const DeleteConfirmModal = ({ user, refetch, setModal }) => {
+const DeleteConfirmModal = ({ user, refetch, setModal, isLoading }) => {
   const handleDelete = (email) => {
     fetch(`https://limitless-dusk-82358.herokuapp.com/alluserr/${email}`, {
       method: "DELETE",
@@ -14,6 +17,9 @@ const DeleteConfirmModal = ({ user, refetch, setModal }) => {
         }
       });
   };
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
   return (
     <div className="">
       <input type="checkbox" id="deleteModal" className="modal-toggle" />
@@ -35,6 +41,12 @@ const DeleteConfirmModal = ({ user, refetch, setModal }) => {
           >
             Delete
           </button>
+          <label
+            for="deleteModal"
+            className="bg-orange-500 px-4 text-white font-bold rounded-full mt-5 ml-2"
+          >
+            cancel
+          </label>
         </div>
       </div>
     </div>

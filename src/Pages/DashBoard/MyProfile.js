@@ -9,7 +9,9 @@ const MyProfile = () => {
   const [user] = useAuthState(auth);
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/user?email=${user.email}`)
+      fetch(
+        `https://limitless-dusk-82358.herokuapp.com/user?email=${user.email}`
+      )
         .then((res) => res.json())
         .then((data) => setProfile(data));
     }
@@ -17,7 +19,9 @@ const MyProfile = () => {
 
   const [toolss, setTools] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/userProfile?email=${user.email}`)
+    fetch(
+      `https://limitless-dusk-82358.herokuapp.com/userProfile?email=${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setTools(data);
@@ -34,7 +38,7 @@ const MyProfile = () => {
       phone: event.target.phone.value,
       linkedlnProfile: event.target.profile.value,
     };
-    fetch("http://localhost:5000/api/users/profile", {
+    fetch("https://limitless-dusk-82358.herokuapp.com/api/users/profile", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

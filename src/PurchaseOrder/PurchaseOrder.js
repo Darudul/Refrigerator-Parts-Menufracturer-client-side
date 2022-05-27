@@ -27,19 +27,28 @@ const PurchaseOrder = () => {
   return (
     <div className="max-w-7xl mx-auto mt-10 bg-base-100 shadow-xl mb-96">
       <div className="card lg:card-side bg-base-100 shadow-xl">
-        <figure>
-          <img
-            src="https://api.lorem.space/image/album?w=400&h=400"
-            alt="Album"
-          />
-        </figure>
+        <img src={newTools.image} width="350px" alt="" />
+
         <div className="card-body">
-          <h2>order order:{Id}</h2>
-          <h2 className="card-title">Name:{newTools?.name}</h2>
+          <h2 className="card-title">
+            <span className="text-purple-500 font-bold">Name:</span>{" "}
+            {newTools?.name}
+          </h2>
           <p>{newTools?.description}</p>
-          <p>Price: {newTools?.price}</p>
-          <p>Minimumquantity: {newTools?.minimumQuantity}</p>
-          <p>Availablequantity: {newTools?.availableQuantity}</p>
+          <p>
+            <span className="text-purple-500 font-bold">Price:</span>{" "}
+            {newTools?.price}
+          </p>
+          <p>
+            <span className="text-purple-500 font-bold">Minimumquantity:</span>{" "}
+            {newTools?.minimumQuantity}
+          </p>
+          <p>
+            <span className="text-purple-500 font-bold">
+              Availablequantity:
+            </span>{" "}
+            {newTools?.availableQuantity}
+          </p>
           <div className="card-actions">
             {modal && (
               <BookingModal modal={modal} setModal={setModal}></BookingModal>

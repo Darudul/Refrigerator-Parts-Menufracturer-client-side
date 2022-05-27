@@ -3,14 +3,14 @@ import { FaFlagUsa } from "react-icons/fa";
 import "./Business.css";
 const Business = () => {
   return (
-    <div className="mt-10 mb-10">
-      <h1 className="text-center mb-6 text-cyan-500 text-5xl font-bold">
-        MILLIONS BUSINESS TRUST US
+    <div className="mt-10 mb-10 bg-cyan-50 pt-10">
+      <h1 className="text-center mb-6 text-cyan-500 text-3xl font-bold">
+        THOUSAND OF COMPANY TRUST US
       </h1>
       <h3 className="text-center mb-24 font-bold">
         TRY TO UNDERSTAND USERS EXPECTATION
       </h3>
-      <div className="max-w-7xl mx-auto grid business-style">
+      <div className="max-w-7xl mx-auto business-style">
         <div>
           <h1 className="text-4xl text-cyan-500 mb-4">
             <img
@@ -52,7 +52,7 @@ const Business = () => {
               alt=""
             />{" "}
           </h1>
-          <h1 className="text-3xl font-bold">50+</h1>
+          <h1 className="text-3xl font-bold">60+</h1>
           <p className="mt-3 text-2xl text-cyan-500">Tools</p>
         </div>
       </div>

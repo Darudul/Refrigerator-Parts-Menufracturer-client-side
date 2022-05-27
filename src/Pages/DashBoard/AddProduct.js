@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 import Loading from "../../LoginSignup/Loading/Loading";
 
@@ -33,12 +34,13 @@ const AddProduct = () => {
       availableQuantity,
     };
     // console.log(addProduct);
-    const url = `http://localhost:5000/addItem`;
+    const url = `https://limitless-dusk-82358.herokuapp.com/addItem`;
     const { data } = await axios.post(url, addProduct, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
     });
+    toast.success("Product added Successfully");
     event.target.reset();
   };
   return (

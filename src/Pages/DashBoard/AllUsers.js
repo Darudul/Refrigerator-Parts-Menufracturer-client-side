@@ -49,6 +49,7 @@ const AllUsers = () => {
                 user={user}
                 refetch={refetch}
                 setModal={setModal}
+                isLoading={isLoading}
               ></UserRow>
             ))}
           </tbody>

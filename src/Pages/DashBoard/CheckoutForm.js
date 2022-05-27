@@ -14,7 +14,7 @@ const CheckoutForm = ({ order }) => {
   const { _id, price, userName, email } = order;
 
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch("https://limitless-dusk-82358.herokuapp.com/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -79,7 +79,7 @@ const CheckoutForm = ({ order }) => {
         transactionId: paymentIntent.id,
       };
 
-      fetch(`http://localhost:5000/cardBooking/${_id}`, {
+      fetch(`https://limitless-dusk-82358.herokuapp.com/cardBooking/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
