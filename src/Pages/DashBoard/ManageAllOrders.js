@@ -86,6 +86,25 @@ const ManageAllOrders = () => {
                   <td>{order.price}</td>
                   <td>{order.itemMinimumQuantity}</td>
                   <td>{order.itemAvailableQuantity}</td>
+
+                  <td>
+                    {order?.paid ? (
+                      <>
+                        {order?.transactionId ? (
+                          <p className="text-green-500">Paid</p>
+                        ) : (
+                          <button
+                            onClick={() => handleShipped(order._id)}
+                            className="text-orange-500 hover:underline hover:cursor-pointer"
+                          >
+                            UnPaid
+                          </button>
+                        )}
+                      </>
+                    ) : (
+                      <label className="text-orange-500">UnPaid</label>
+                    )}
+                  </td>
                   <td>
                     {order?.paid ? (
                       <>
@@ -107,31 +126,6 @@ const ManageAllOrders = () => {
                         className="btn btn-sm bg-orange-500	border-none"
                       >
                         Cancel
-                      </label>
-                    )}
-                  </td>
-
-                  <td>
-                    {order?.paid ? (
-                      <>
-                        {order?.transactionId ? (
-                          <p className="text-green-500">Paid</p>
-                        ) : (
-                          <button
-                            onClick={() => handleShipped(order._id)}
-                            className="text-orange-500 hover:underline hover:cursor-pointer"
-                          >
-                            UnPaid
-                          </button>
-                        )}
-                      </>
-                    ) : (
-                      <label
-                        onClick={() => setDeleteOrder(order)}
-                        htmlFor="deleOrder"
-                        className="btn btn-sm bg-orange-500	border-none"
-                      >
-                      UnPaid
                       </label>
                     )}
                   </td>
