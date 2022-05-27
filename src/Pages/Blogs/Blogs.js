@@ -3,14 +3,14 @@ import { Link, Outlet } from "react-router-dom";
 
 const Blogs = () => {
   return (
-    <div className='max-w-7xl mx-auto'>
+    <div className="max-w-7xl mx-auto">
       <div className="mt-10 max-w-7xl mx-auto mb-10 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
         <div className="bg-base-100 shadow-xl">
           <div className="card-body">
-            <h2 className="card-title">
+            <h2 className="card-title font-bold">
               14.1 How will you improve the performance of a React Application?
             </h2>
-            <p className="text-purple-500">Answer:</p>
+            <p className="text-purple-500 font-bold">Answer:</p>
             <p>
               In React applications, we are guaranteed a very fast UI by
               default. However, as an application grows, developers may
@@ -26,11 +26,11 @@ const Blogs = () => {
 
         <div className="card bg-base-100 shadow-xl">
           <div className="card-body">
-            <h2 className="card-title">
+            <h2 className="card-title font-bold">
               14.2 What are the different ways to manage a state in a React
               application?
             </h2>
-            <p className="text-purple-500">Answer:</p>
+            <p className="text-purple-500 font-bold">Answer:</p>
             <p>
               5 Types of Application State in React help in State Management.
               They are: 1 . Communication State: Communication state forms the
@@ -52,10 +52,10 @@ const Blogs = () => {
         </div>
         <div className="bg-base-100 shadow-xl">
           <div className="card-body">
-            <h2 className="card-title">
+            <h2 className="card-title font-bold">
               14.3 How does prototypical inheritance work?
             </h2>
-            <p className="text-purple-500">Answer:</p>
+            <p className="text-purple-500 font-bold">Answer:</p>
             <p>
               The Prototypal Inheritance is a feature in javascript used to add
               methods and properties in objects. It is a method by which an
@@ -67,12 +67,12 @@ const Blogs = () => {
         </div>
         <div className="bg-base-100 shadow-xl">
           <div className="card-body">
-            <h2 className="card-title">
+            <h2 className="card-title font-bold">
               14.4 Why you do not set the state directly in React. For example,
               if you have const [products, setProducts] = useState([]). Why you
               do not set products = [...] instead, you use the setProducts
             </h2>
-            <p className="text-purple-500">Answer:</p>
+            <p className="text-purple-500 font-bold">Answer:</p>
             <p>
               When directly update the state, it does not change this. state
               immediately. Instead, it creates a pending state transition, and
@@ -87,10 +87,10 @@ const Blogs = () => {
         </div>
         <div className="bg-base-100 shadow-xl">
           <div className="card-body">
-            <h2 className="card-title">
+            <h2 className="card-title font-bold">
               14.6 What is a unit test? Why should write unit tests?
             </h2>
-            <p className="text-purple-500">Answer:</p>
+            <p className="text-purple-500 font-bold">Answer:</p>
             <p>
               <p>What is a unit test?</p>
               Unit test is a type of software testing where individual units or
@@ -119,20 +119,25 @@ const Blogs = () => {
           className="drawer-toggle"
         />
         <div className="drawer-content ">
-          <h2 className="text-3xl font-bold mt-16 text-center">welcome To My Portfolio</h2>
+          <h2 className="text-3xl font-bold mt-16 text-center text-purple-500 mb-10">
+            welcome To My Portfolio
+          </h2>
           <Outlet></Outlet>
         </div>
-        <div className="drawer-side">
+        <div className="drawer-side mt-10">
           <label for="dashboard-sidebar" className="drawer-overlay"></label>
           <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
             {/* <!-- Sidebar content here --> */}
             <li>
-              <Link className="mt-32" to="/blogs/myportfolio">
+              <Link
+                className="mt-32 font-bold text-purple-500"
+                to="/blogs/myportfolio"
+              >
                 My portfolio
               </Link>
             </li>
             <li>
-              <Link className="" to="/blogs/livelink">
+              <Link className="font-bold text-purple-500" to="/blogs/livelink">
                 Live Website Link
               </Link>
             </li>

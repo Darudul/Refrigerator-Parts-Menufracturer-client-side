@@ -1,8 +1,9 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import ManageAllOrders from "./ManageAllOrders";
 
-const MyOrderModal = ({ deleteItem, deleteOrder, setDeleteOrder }) => {
+const ManageAllOrderModal = ({ deleteItem, deleteOrder, setDeleteOrder }) => {
   return (
     <>
       <input type="checkbox" id="deleOrder" class="modal-toggle" />
@@ -32,4 +33,4 @@ const MyOrderModal = ({ deleteItem, deleteOrder, setDeleteOrder }) => {
   );
 };
 
-export default MyOrderModal;
+export default ManageAllOrderModal;

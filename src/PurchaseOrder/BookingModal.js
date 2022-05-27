@@ -14,19 +14,6 @@ const BookingModal = ({ modal, setModal }) => {
     event.preventDefault();
     console.log(name, _id);
 
-    // const booking = {
-    //   itemId: _id,
-    //   itemName: name,
-    //   itemDescription: description,
-    //   itemPrice: price,
-    //   // minimumQuantity,
-    //   // if(minimumQuantity<)
-    //   itemAvailableQuantity: availableQuantity,
-    //   email: user.email,
-    //   phone: event.target.phone.value,
-    //   address: event.target.address.value,
-    // };
-
     const userName = event.target.name.value;
     const email = event.target.email.value;
     const quantity = event.target.minimum.value;

@@ -18,11 +18,14 @@ const Tool = ({ tool }) => {
     navigate(`/purchaseorder/${id}`);
   };
   return (
-    <div className="card card-compact w-86 bg-base-100 shadow-xl">
+    <div className="card card-compact w-86 bg-base-100 shadow-2xl h-full">
       <figure>
         <img
-          src="https://api.lorem.space/image/shoes?w=400&h=225"
+          src={image}
+          height="200px"
+          width="200px"
           alt="Shoes"
+          className="rounded-sm"
         />
       </figure>
       <div className="card-body">
@@ -47,7 +50,7 @@ const Tool = ({ tool }) => {
         <div className="card-actions mt-3">
           <button
             onClick={() => purchaseOrder(_id)}
-            className="btn btn-info"
+            className="btn btn-info text-white w-full"
             tool={tool}
           >
             Purchase Now

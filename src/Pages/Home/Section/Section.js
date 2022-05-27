@@ -17,7 +17,7 @@ const Section = () => {
       </div>
       <div className='sub-title'>
         <h2 className="mt-16 font-bold text-teal-400 mb-2">
-          ZHONGSHAN RUIJEEP ELECTRICAL CO., LTD.
+          DM MENUFRACTURER CO.LTD
         </h2>
         <p className="text-teal-400">Subtitle</p>
         <hr />

@@ -15,11 +15,14 @@ const ManageProductModal = ({ deleteItem, deleteOrder, setDeleteOrder }) => {
           </h3>
 
           <button
-            className="btn btn-xs mt-5"
+            className="btn btn-xs mt-5 bg-red-500 border-0"
             onClick={() => deleteItem(deleteOrder._id)}
           >
-            YAH GOT IT
+            Delete
           </button>
+          <label for="deleOrder" class="btn btn-xs ml-3 ">
+            cancel
+          </label>
         </div>
       </div>
     </>

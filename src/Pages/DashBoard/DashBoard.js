@@ -12,7 +12,7 @@ const DashBoard = () => {
     <div className="drawer drawer-mobile">
       <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
-        <h2 className="text-2xl font-bold text-purple-500  mt-10">
+        <h2 className="text-2xl font-bold text-purple-500  mt-10 ml-5">
           Welcome to Dashboard
         </h2>
         <Outlet></Outlet>

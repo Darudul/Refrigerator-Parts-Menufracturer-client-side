@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router";
+import ManageAllOrderModal from "./ManageAllOrdersModal";
 
 const ManageAllOrders = () => {
   const navigate = useNavigate();
   const [allOrders, SetAllOrders] = useState([]);
+  const [deleteOrder, setDeleteOrder] = useState({});
   useEffect(() => {
     fetch("http://localhost:5000/bookingOrder", {
       method: "GET",
@@ -22,19 +24,17 @@ const ManageAllOrders = () => {
     navigate("/addnewitem");
   };
   const deleteItem = (id) => {
-    const success = window.confirm("Are you sure you want to delete this item");
-    if (success) {
-      const url = `http://localhost:5000/bookingOrder/${id}`;
-      fetch(url, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          const restItem = allOrders.filter((item) => item._id !== id);
-          SetAllOrders(restItem);
-        });
-    }
+    const url = `http://localhost:5000/bookingOrder/${id}`;
+    fetch(url, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        const restItem = allOrders.filter((item) => item._id !== id);
+        SetAllOrders(restItem);
+        setDeleteOrder({});
+      });
   };
   const handleShipped = (id) => {
     const status = { status: "shipped" };
@@ -50,9 +50,16 @@ const ManageAllOrders = () => {
       .then((data) => console.log(data));
   };
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto bg-orange-100 pb-10 pl-4 pr-4 rounded pt-5 mb-10">
+      {deleteOrder._id && (
+        <ManageAllOrderModal
+          setDeleteOrder={setDeleteOrder}
+          deleteItem={deleteItem}
+          deleteOrder={deleteOrder}
+        ></ManageAllOrderModal>
+      )}
       <div>
-        <h5 className="text-xl font-bold text-red-300 mt-5 mb-5">
+        <h5 className="text-xl font-bold text-red-300 mt-5 mb-5 text-center">
           Manage All Orders
         </h5>
         <div className="overflow-x-auto">
@@ -91,12 +98,13 @@ const ManageAllOrders = () => {
                         )}
                       </>
                     ) : (
-                      <button
-                        onClick={() => deleteItem(order._id)}
-                        className="text-red-500 hover:underline hover:cursor-pointer"
+                      <label
+                        onClick={() => setDeleteOrder(order)}
+                        htmlFor="deleOrder"
+                        className="btn btn-sm bg-orange-500	border-none"
                       >
                         Cancel
-                      </button>
+                      </label>
                     )}
                   </td>
                 </tr>

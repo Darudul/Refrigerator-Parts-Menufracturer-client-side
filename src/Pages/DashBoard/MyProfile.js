@@ -9,13 +9,20 @@ const MyProfile = () => {
   const [user] = useAuthState(auth);
   useEffect(() => {
     if (user) {
-      fetch(
-        `https://limitless-dusk-82358.herokuapp.com/user?email=${user.email}`
-      )
+      fetch(`http://localhost:5000/user?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => setProfile(data));
     }
   }, [user]);
+
+  const [toolss, setTools] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/userProfile?email=${user.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setTools(data);
+      });
+  }, [toolss]);
 
   const handleUser = (event) => {
     event.preventDefault();
@@ -37,32 +44,66 @@ const MyProfile = () => {
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
+    event.target.reset();
   };
 
   return (
     <div className="max-w-7xl mx-auto my-profile">
       <div className="mt-10">
-        <h2 className="text-xl font-bold mt-4 mb-4 text-orange-600">
+        <h2 className="text-xl font-bold mt-4 mb-10 text-orange-600">
           My Profile Information
         </h2>
 
-        <p>
-          <span className="label-text text-xl font-bold"> Name:</span>
+        <p className="mb-4 ml-3">
+          <span className="label-text text-xl font-bold mb-5 text-cyan-500">
+            {" "}
+            Name:
+          </span>
           {user?.displayName}
         </p>
-        <p>
-          <span className="label-text text-xl font-bold">Email: </span>
+        <p className="mb-4 ml-3">
+          <span className="label-text text-xl font-bold text-cyan-500">
+            Email:{" "}
+          </span>
           {user?.email}
         </p>
+        <div className="max-w-7xl mx-auto set-grid">
+          {toolss.map((tool) => (
+            <div key={tool._id}>
+              <p className="mb-4 ml-3">
+                <span className=" font-bold text-cyan-500"> Education:</span>
+                {tool.education}
+              </p>
+              <p className="mb-4 ml-3">
+                <span className="font-bold text-cyan-500"> Location:</span>
+                {tool.location}
+              </p>
+              <p className="mb-4 ml-3">
+                <span className=" font-bold text-cyan-500">
+                  {" "}
+                  Linkedln Profile:
+                </span>
+                {tool.linkedlnProfile}
+              </p>
+              <p className="mt-5  ml-3">
+                <span className="text-cyan-500 font-bold"> Phone: </span>
+                {tool.phone}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="mt-10">
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-cyan-500">
+        <h2 className="text-cyan-400 mt-5 mb-5 text-xl font-bold">
+          Add Your Profile Information
+        </h2>
+        <div className="card max-w-sm shadow-2xl bg-cyan-100">
           <div className="card-body">
             <form onSubmit={handleUser}>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Education:</span>
+                  <span className="label-text font-bold">Education:</span>
                 </label>
                 <input
                   type="text"
@@ -73,7 +114,7 @@ const MyProfile = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Location</span>
+                  <span className="label-text font-bold">Location</span>
                 </label>
                 <input
                   type="text"
@@ -84,7 +125,7 @@ const MyProfile = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Phone Number</span>
+                  <span className="label-text font-bold">Phone Number</span>
                 </label>
                 <input
                   type="text"
@@ -95,7 +136,7 @@ const MyProfile = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Linkedln Profile</span>
+                  <span className="label-text font-bold">Linkedln Profile</span>
                 </label>
                 <input
                   type="text"
@@ -105,7 +146,7 @@ const MyProfile = () => {
                 />
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">
+                <button className="bg-cyan-500 py-2 rounded text-white font-bold">
                   Add Profile Information
                 </button>
               </div>

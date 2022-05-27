@@ -5,10 +5,7 @@ import { useNavigate } from "react-router";
 import auth from "../../firebase.init";
 import Loading from "../../LoginSignup/Loading/Loading";
 
-const Review = ({ tool }) => {
-  const { name } = tool;
-
-  console.log(name);
+const Review = () => {
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
   if (loading) {
@@ -22,7 +19,6 @@ const Review = ({ tool }) => {
     const addReview = {
       description,
       review,
-      name,
     };
     // console.log(addProduct);
     const url = `http://localhost:5000/reviews`;
@@ -34,25 +30,28 @@ const Review = ({ tool }) => {
     event.target.reset();
   };
 
+  // if (review?.length > 5) {
+  //   return;
+  // }
+
   return (
-    <div className=" w-86 bg-base-100">
-      <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-slate-200">
-        <h2 className="text-center font-bold mt-5">{name}</h2>
+    <div className=" w-86 bg-base-100 mb-16 ml:lg-96">
+      <div className="card overflow-x-auto max-w-7xl mx-auto shadow-2xl bg-slate-200">
         <div className="card-body">
           <form onSubmit={addReview}>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Product Review</span>
+                <span className="label-text font-bold">Product Review</span>
               </label>
               <input
                 type="number"
                 name="review"
                 placeholder="Product Review"
                 className="input input-bordered"
-                maxLength={5}
+                max="5"
               />
             </div>
-            <div className="form-control">
+            <div className="form-control font-bold">
               <label className="label">
                 <span className="label-text">Product Desription</span>
               </label>
@@ -64,7 +63,7 @@ const Review = ({ tool }) => {
               />
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Add Review</button>
+              <button className="btn btn-secondary">Add Review</button>
             </div>
           </form>
         </div>

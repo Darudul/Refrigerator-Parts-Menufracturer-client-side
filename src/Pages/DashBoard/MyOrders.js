@@ -50,7 +50,7 @@ const MyOrders = () => {
   };
 
   return (
-    <div className="">
+    <div className="bg-cyan-100 pb-16 rounded">
       {deleteOrder._id && (
         <MyOrderModal
           setDeleteOrder={setDeleteOrder}
@@ -58,7 +58,7 @@ const MyOrders = () => {
           deleteOrder={deleteOrder}
         ></MyOrderModal>
       )}
-      <h2 className="text-xl font-bold mt-4 mb-4 text-orange-600">
+      <h2 className="text-xl font-bold mt-4 text-orange-600 mb-4 pt-4 text-center">
         My Booking Order
       </h2>
       <div className="overflow-x-auto max-w-7xl mx-auto">
@@ -78,7 +78,7 @@ const MyOrders = () => {
             {orders.map((order, index) => (
               <tr key={order._id}>
                 <th>{index + 1}</th>
-                <td>{order.itemName}</td>
+                <td>{order.userName}</td>
                 <td>{order.email}</td>
                 <td>{order.phone}</td>
                 <td>{order.address}</td>
@@ -92,7 +92,9 @@ const MyOrders = () => {
                   )}
                   {order.price && order.paid && (
                     <div>
-                      <span className="text-success">Paid</span>
+                      <span className=" bg-teal-600 text-white font-bold px-4 py-1 rounded">
+                        Paid
+                      </span>
                       <p>
                         Transaction id:{" "}
                         <span className="text-success">

@@ -13,17 +13,19 @@ const HomeReview = () => {
   return (
     <div className=" bg-base-100 mt-10 mb-10">
       <h2 className="text-2xl text-center mt-5 mb-5 font-bold text-cyan-600">
-        Customer Reviews
+        Customers Reviews
       </h2>
 
       <div className=" max-w-7xl mx-auto set-grid ">
         {reviews.map((review) => (
           <div
-            className="bg-orange-300 shadow-lg p-3 rounded-lg text-cyan-600 font-bold"
+            className="bg-cyan-500	 shadow-lg p-3 rounded-lg font-bold text-white"
             key={review._id}
           >
-            <p>Review: {review.review}</p>
-            <p>{review.description}</p>
+            <p className='text-center'>
+              <span>Review:</span> {review.review}
+            </p>
+            <p className='text-center'>{review.description}</p>
           </div>
         ))}
       </div>

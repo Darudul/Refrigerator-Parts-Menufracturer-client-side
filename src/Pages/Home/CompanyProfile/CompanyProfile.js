@@ -6,7 +6,7 @@ const CompanyProfile = () => {
       <div
         className="hero"
         style={{
-          background: `url(${"https://api.lorem.space/image/fashion?w=1000&h=800"})`,
+          background: `url(${"https://i.ibb.co/HFBtNdy/plant-production-refrigerators-molding-cast-press-machine-manufacture-plastic-parts-using-polymers-r.jpg"})`,
           backgroundSize: "cover",
           height: "700px",
         }}
@@ -16,15 +16,16 @@ const CompanyProfile = () => {
           <div className="mt-10">
             <h1 className="mb-5 text-5xl font-bold">COMPANY PROFILE</h1>
             <p className="mb-5">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+              Zhongshan RUIJEEP electrical Co., Ltd is the professional home
+              appliance pump and motor manufacturer. Also we are One-stop design
+              solution provider for the establishment of new factory for washing
+              machine, refrigerator and air conditioner etc.,
             </p>
             <div className="mt-32 grid company-image">
               <div
                 className="rounded-lg"
                 style={{
-                  background: `url(${"https://api.lorem.space/image/fashion?w=1000&h=800"})`,
+                  background: `url(${"https://i.ibb.co/1Rb5MKg/8x8-Campbell-HQ.jpg"})`,
                   backgroundSize: "cover",
                   height: "200px",
                   width: "200px",
@@ -33,7 +34,7 @@ const CompanyProfile = () => {
               <div
                 className="rounded-lg"
                 style={{
-                  background: `url(${"https://api.lorem.space/image/fashion?w=1000&h=800"})`,
+                  background: `url(${"https://i.ibb.co/jVHNhV0/20150805204041-google-company-building-corporate.webp"})`,
                   backgroundSize: "cover",
                   height: "200px",
                   width: "200px",
@@ -42,7 +43,7 @@ const CompanyProfile = () => {
               <div
                 className="rounded-lg"
                 style={{
-                  background: `url(${"https://api.lorem.space/image/fashion?w=1000&h=800"})`,
+                  background: `url(${"https://i.ibb.co/ZdHc7y6/ZHONGSHAN-RUIJEEP-ELECTRICAL-CO-LTD-1.jpg"})`,
                   backgroundSize: "cover",
                   height: "200px",
                   width: "200px",
@@ -51,7 +52,7 @@ const CompanyProfile = () => {
               <div
                 className="rounded-lg"
                 style={{
-                  background: `url(${"https://api.lorem.space/image/fashion?w=1000&h=800"})`,
+                  background: `url(${"https://i.ibb.co/hdGHQxh/ZHONGSHAN-RUIJEEP-ELECTRICAL-CO-LTD.jpg"})`,
                   backgroundSize: "cover",
                   height: "200px",
                   width: "200px",

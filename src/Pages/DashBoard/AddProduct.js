@@ -33,7 +33,7 @@ const AddProduct = () => {
       availableQuantity,
     };
     // console.log(addProduct);
-    const url = `https://limitless-dusk-82358.herokuapp.com/addItem`;
+    const url = `http://localhost:5000/addItem`;
     const { data } = await axios.post(url, addProduct, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -50,7 +50,7 @@ const AddProduct = () => {
         <div className="card-body">
           <form onSubmit={addProduct}>
             <div className="form-control">
-              <label className="label">
+              <label className="label font-bold">
                 <span className="label-text">Image</span>
               </label>
               <input
@@ -61,7 +61,7 @@ const AddProduct = () => {
               />
             </div>
             <div className="form-control">
-              <label className="label">
+              <label className="label font-bold">
                 <span className="label-text">Product Name</span>
               </label>
               <input
@@ -72,7 +72,7 @@ const AddProduct = () => {
               />
             </div>
             <div className="form-control">
-              <label className="label">
+              <label className="label font-bold">
                 <span className="label-text">Desription</span>
               </label>
               <input
@@ -83,7 +83,7 @@ const AddProduct = () => {
               />
             </div>
             <div className="form-control">
-              <label className="label">
+              <label className="label font-bold">
                 <span className="label-text">Price</span>
               </label>
               <input
@@ -94,18 +94,18 @@ const AddProduct = () => {
               />
             </div>
             <div className="form-control">
-              <label className="label">
+              <label className="label font-bold">
                 <span className="label-text">Minimum Quantity</span>
               </label>
               <input
                 type="text"
-                name="Minimum Quantity"
-                placeholder="Add your location"
+                name="quantity"
+                placeholder="Add Quantity"
                 className="input input-bordered"
               />
             </div>
             <div className="form-control">
-              <label className="label">
+              <label className="label font-bold">
                 <span className="label-text">Available Quantity</span>
               </label>
               <input

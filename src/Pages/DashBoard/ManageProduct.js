@@ -7,10 +7,10 @@ import ManageProductModal from "./ManageProductModal";
 const ManageProduct = () => {
   const navigate = useNavigate();
   const [deleteOrder, setDeleteOrder] = useState({});
-  console.log(deleteOrder);
+  // console.log(deleteOrder);
   const [manageProduct, setManageProduct] = useState([]);
   useEffect(() => {
-    fetch("https://limitless-dusk-82358.herokuapp.com/tools", {
+    fetch("http://localhost:5000/tools", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -39,7 +39,7 @@ const ManageProduct = () => {
       });
   };
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto bg-cyan-100 pb-16 pl-4 pr-4 rounded">
       {deleteOrder._id && (
         <ManageProductModal
           setDeleteOrder={setDeleteOrder}
@@ -48,7 +48,9 @@ const ManageProduct = () => {
         ></ManageProductModal>
       )}
       <div>
-        <h5 className="text-xl font-bold my-10">Manage All Products</h5>
+        <h5 className="text-xl font-bold my-10 text-center text-purple-500 pt-5">
+          Manage All Products
+        </h5>
         <div className="overflow-x-auto">
           <table className="table w-full">
             <thead>
