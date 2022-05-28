@@ -61,7 +61,7 @@ const MyOrders = () => {
       <h2 className="text-xl font-bold mt-4 text-orange-600 mb-4 pt-4 text-center">
         My Booking Order
       </h2>
-      <div className=" max-w-7xl mx-auto">
+      <div className="overflow-x-auto max-w-7xl mx-auto">
         <table className="table w-full">
           <thead>
             <tr>
