@@ -34,10 +34,6 @@ const Review = () => {
     event.target.reset();
   };
 
-  // if (review?.length > 5) {
-  //   return;
-  // }
-
   return (
     <div className=" w-86 bg-base-100 mb-16 ml:lg-96">
       <div className="card overflow-x-auto max-w-7xl mx-auto shadow-2xl bg-slate-200">

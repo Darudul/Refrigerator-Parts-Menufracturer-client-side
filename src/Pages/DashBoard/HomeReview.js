@@ -9,6 +9,8 @@ const HomeReview = () => {
         setReviews(data);
       });
   }, []);
+  const items = [...reviews];
+  const newReview = items.reverse();
 
   return (
     <div className=" bg-base-100 mt-10 mb-10">
@@ -17,20 +19,20 @@ const HomeReview = () => {
       </h2>
 
       <div className=" max-w-7xl mx-auto set-grid ">
-        {reviews.map((review) => (
+        {newReview.map((review) => (
           <div
-            className="bg-purple-400	 shadow-lg p-3 rounded-lg font-bold text-white"
+            className="bg-slate-200	 shadow-lg p-3 rounded-lg font-bold text-cyan-500"
             key={review._id}
           >
             <p className="text-center">
-              <div class="avatar">
-                <div class="w-24 rounded-full ">
+              <div className="avatar">
+                <div className="w-24 rounded-full ">
                   <img src={review.image} />
                 </div>
               </div>
             </p>
             <p className="text-center">
-            <span >Review:</span> {review.review}
+              <span>Review:</span> {review.review}
             </p>
             <p className="text-center">{review.description}</p>
           </div>

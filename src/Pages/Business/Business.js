@@ -8,7 +8,7 @@ const Business = () => {
         THOUSAND OF COMPANY TRUST US
       </h1>
       <h3 className="text-center mb-24 font-bold">
-        TRY TO UNDERSTAND USERS EXPECTATION
+        TRY TO UNDERSTAND CUSTOMERS EXPECTATION
       </h3>
       <div className="max-w-7xl mx-auto business-style">
         <div>
