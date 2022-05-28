@@ -69,7 +69,7 @@ const Review = () => {
               <label className="label">
                 <span className="label-text">Product Desription</span>
               </label>
-              <input
+              <textarea
                 type="text"
                 name="description"
                 placeholder="Product Desription"

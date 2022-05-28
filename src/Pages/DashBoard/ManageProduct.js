@@ -60,6 +60,7 @@ const ManageProduct = () => {
                 <th>ItemPrice</th>
                 <th>MinimumQuantity</th>
                 <th>AvailableQuantity</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -67,7 +68,7 @@ const ManageProduct = () => {
                 <tr key={order._id}>
                   <th>{index + 1}</th>
                   <td>{order.name}</td>
-                  <td>{order.price}</td>
+                  <td>$ {order.price}</td>
                   <td>{order.minimumQuantity}</td>
                   <td>{order.availableQuantity}</td>
                   <td>

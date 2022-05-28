@@ -25,7 +25,7 @@ const DashBoard = () => {
               <li>
                 <Link
                   to="/dashboard/myorder"
-                  className="font-bold text-slate-700"
+                  className="text-purple-500 font-bold"
                 >
                   My Orders
                 </Link>
@@ -33,7 +33,7 @@ const DashBoard = () => {
               <li>
                 <Link
                   to="/dashboard/review"
-                  className="font-bold text-slate-700"
+                  className="text-purple-500 font-bold"
                 >
                   Add Reviews
                 </Link>
@@ -41,7 +41,7 @@ const DashBoard = () => {
               <li>
                 <Link
                   to="/dashboard/myprofile"
-                  className="font-bold text-slate-700"
+                  className="text-purple-500 font-bold"
                 >
                   My Profile
                 </Link>
@@ -53,7 +53,7 @@ const DashBoard = () => {
               <li>
                 <Link
                   to="/dashboard/manageproduct"
-                  className="font-bold text-slate-700"
+                  className="text-purple-500 font-bold"
                 >
                   Manage Products
                 </Link>
@@ -61,7 +61,7 @@ const DashBoard = () => {
               <li>
                 <Link
                   to="/dashboard/manageallorder"
-                  className="font-bold text-slate-700"
+                  className="text-purple-500 font-bold"
                 >
                   Manage All Orders
                 </Link>
@@ -69,7 +69,7 @@ const DashBoard = () => {
               <li>
                 <Link
                   to="/dashboard/addnewitem"
-                  className="font-bold text-slate-700"
+                  className="text-purple-500 font-bold"
                 >
                   Add A Product
                 </Link>
@@ -77,7 +77,7 @@ const DashBoard = () => {
               <li>
                 <Link
                   to="/dashboard/myprofile"
-                  className="font-bold text-slate-700"
+                  className="text-purple-500 font-bold"
                 >
                   My Profile
                 </Link>
@@ -85,7 +85,7 @@ const DashBoard = () => {
               <li>
                 <Link
                   to="/dashboard/alluser"
-                  className="font-bold text-slate-700"
+                  className="font-bold text-purple-500 "
                 >
                   Make Admin
                 </Link>

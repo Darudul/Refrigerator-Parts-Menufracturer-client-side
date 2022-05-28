@@ -70,10 +70,14 @@ const ManageAllOrders = () => {
             <thead>
               <tr>
                 <th></th>
-                <th>ItemName</th>
+                <th>Name</th>
                 <th>Email</th>
                 <th>ItemName</th>
                 <th>Price</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
               </tr>
             </thead>
             <tbody>

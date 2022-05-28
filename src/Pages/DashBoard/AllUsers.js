@@ -31,14 +31,17 @@ const AllUsers = () => {
           refetch={refetch}
         ></DeleteConfirmModal>
       )}
-      <h2 className="text-2xl text-orange-600 mt-5 mb-5 font-bold text-center">Welcome Make An Admin From Here</h2>
+      <h2 className="text-2xl text-orange-600 mt-5 mb-5 font-bold text-center">
+        Welcome Make An Admin From Here
+      </h2>
       <div className="overflow-x-auto max-w-7xl mx-auto bg-cyan-100 pb-16 pl-10 pt-10 pr-10 rounded">
         <table className="table w-full">
           <thead>
             <tr>
               <th></th>
-
               <th>Email Address</th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
