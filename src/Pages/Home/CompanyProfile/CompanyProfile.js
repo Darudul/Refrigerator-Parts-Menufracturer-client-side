@@ -27,8 +27,8 @@ const CompanyProfile = () => {
                 style={{
                   background: `url(${"https://i.ibb.co/1Rb5MKg/8x8-Campbell-HQ.jpg"})`,
                   backgroundSize: "cover",
-                  height: "200px",
-                  width: "200px",
+                  height: "300px",
+                  width: "300px",
                 }}
               ></div>
               <div
@@ -36,26 +36,18 @@ const CompanyProfile = () => {
                 style={{
                   background: `url(${"https://i.ibb.co/jVHNhV0/20150805204041-google-company-building-corporate.webp"})`,
                   backgroundSize: "cover",
-                  height: "200px",
-                  width: "200px",
+                  height: "300px",
+                  width: "300px",
                 }}
               ></div>
-              <div
-                className="rounded-lg"
-                style={{
-                  background: `url(${"https://i.ibb.co/ZdHc7y6/ZHONGSHAN-RUIJEEP-ELECTRICAL-CO-LTD-1.jpg"})`,
-                  backgroundSize: "cover",
-                  height: "200px",
-                  width: "200px",
-                }}
-              ></div>
+
               <div
                 className="rounded-lg"
                 style={{
                   background: `url(${"https://i.ibb.co/hdGHQxh/ZHONGSHAN-RUIJEEP-ELECTRICAL-CO-LTD.jpg"})`,
                   backgroundSize: "cover",
-                  height: "200px",
-                  width: "200px",
+                  height: "300px",
+                  width: "300px",
                 }}
               ></div>
             </div>

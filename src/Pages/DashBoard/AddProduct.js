@@ -60,6 +60,7 @@ const AddProduct = () => {
                 name="img"
                 placeholder="Image"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -71,6 +72,7 @@ const AddProduct = () => {
                 name="itemname"
                 placeholder="Product Name"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -82,6 +84,7 @@ const AddProduct = () => {
                 name="description"
                 placeholder="Product Desription"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -93,6 +96,7 @@ const AddProduct = () => {
                 name="price"
                 placeholder="Product Price"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -104,6 +108,7 @@ const AddProduct = () => {
                 name="quantity"
                 placeholder="Add Quantity"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -115,6 +120,7 @@ const AddProduct = () => {
                 name="available"
                 placeholder="Available Quantity"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control mt-6">

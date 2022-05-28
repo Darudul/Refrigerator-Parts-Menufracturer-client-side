@@ -52,8 +52,7 @@ const Review = () => {
                 name="image"
                 placeholder="Image"
                 className="input input-bordered"
-                max="5"
-                min="1"
+                required
               />
             </div>
             <div className="form-control">
@@ -67,6 +66,7 @@ const Review = () => {
                 className="input input-bordered"
                 max="5"
                 min="1"
+                required
               />
             </div>
             <div className="form-control font-bold">
@@ -78,6 +78,7 @@ const Review = () => {
                 name="description"
                 placeholder="Product Desription"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control mt-6">

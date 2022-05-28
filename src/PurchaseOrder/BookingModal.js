@@ -18,9 +18,11 @@ const BookingModal = ({ modal, setModal }) => {
     const email = event.target.email.value;
     const quantity = event.target.minimum.value;
     if (quantity < minimumQuantity || quantity > availableQuantity) {
+      toast.error("Quantity can not be less than MinimumQuantity and higher than AvailableQuantity");
       setDisabled(true);
       return;
     }
+
     const phone = event.target.phone.value;
     const address = event.target.address.value;
 

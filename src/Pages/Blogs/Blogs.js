@@ -118,31 +118,6 @@ const Blogs = () => {
           type="checkbox"
           className="drawer-toggle"
         />
-        <div className="drawer-content ">
-          <h2 className="text-3xl font-bold mt-16 text-center text-purple-500 mb-10">
-            welcome To My Portfolio
-          </h2>
-          <Outlet></Outlet>
-        </div>
-        <div className="drawer-side mt-10">
-          <label for="dashboard-sidebar" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
-            {/* <!-- Sidebar content here --> */}
-            <li>
-              <Link
-                className="mt-32 font-bold text-purple-500"
-                to="/blogs/myportfolio"
-              >
-                My portfolio
-              </Link>
-            </li>
-            <li>
-              <Link className="font-bold text-purple-500" to="/blogs/livelink">
-                Live Website Link
-              </Link>
-            </li>
-          </ul>
-        </div>
       </div>
     </div>
   );

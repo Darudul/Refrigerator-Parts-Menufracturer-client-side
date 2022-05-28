@@ -75,7 +75,7 @@ const MyProfile = () => {
           {toolss.map((tool) => (
             <div key={tool._id}>
               <p className="mb-4 ml-3">
-                <span className=" font-bold text-cyan-500"> Education:</span>
+                <span className=" font-bold text-cyan-500"> Education: </span>
                 {tool.education}
               </p>
               <p className="mb-4 ml-3">
@@ -114,6 +114,7 @@ const MyProfile = () => {
                   name="education"
                   placeholder="Educational background"
                   className="input input-bordered"
+                  required
                 />
               </div>
               <div className="form-control">
@@ -125,6 +126,7 @@ const MyProfile = () => {
                   name="location"
                   placeholder="Add your location"
                   className="input input-bordered"
+                  required
                 />
               </div>
               <div className="form-control">
@@ -136,6 +138,7 @@ const MyProfile = () => {
                   name="phone"
                   placeholder="Your Number"
                   className="input input-bordered"
+                  required
                 />
               </div>
               <div className="form-control">
@@ -147,6 +150,7 @@ const MyProfile = () => {
                   name="profile"
                   placeholder="Add your location"
                   className="input input-bordered"
+                  required
                 />
               </div>
               <div className="form-control mt-6">

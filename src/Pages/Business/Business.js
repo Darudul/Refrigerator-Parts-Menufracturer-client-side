@@ -3,7 +3,7 @@ import { FaFlagUsa } from "react-icons/fa";
 import "./Business.css";
 const Business = () => {
   return (
-    <div className="mt-10 mb-10 bg-cyan-50 pt-10">
+    <div className="mt-10 mb-10 bg-cyan-50 pt-10 pb-16">
       <h1 className="text-center mb-6 text-cyan-500 text-3xl font-bold">
         THOUSAND OF COMPANY TRUST US
       </h1>
@@ -54,23 +54,6 @@ const Business = () => {
           </h1>
           <h1 className="text-3xl font-bold">60+</h1>
           <p className="mt-3 text-2xl text-cyan-500">Tools</p>
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
-        <div className="card mt-10 shadow-xl">
-          <div className="card-body">
-            <div>
-              <h2 className="card-title text-3xl text-orange-400	">
-                Have any question about us or get a products request?
-              </h2>
-              <p className="text-2xl mt-3 text-amber-400	">Don't hesitate to contact us</p>
-              <div className="flex justify-end">
-                <button className="btn btn-primary bg-green-400 border-none">Request For Quote</button>
-                <button className="btn btn-primary ml-3 bg-green-400 border-none">Contact Us</button>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
