@@ -87,7 +87,7 @@ const ManageAllOrders = () => {
                   <td>{order.userName}</td>
                   <td>{order.email}</td>
                   <td>{order.name}</td>
-                  <td>{order.price}</td>
+                  <td>${order.price}</td>
                   <td>{order.itemMinimumQuantity}</td>
                   <td>{order.itemAvailableQuantity}</td>
 

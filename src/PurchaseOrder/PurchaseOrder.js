@@ -36,7 +36,7 @@ const PurchaseOrder = () => {
           </h2>
           <p>{newTools?.description}</p>
           <p>
-            <span className="text-purple-500 font-bold">Price:</span>{" "}
+            <span className="text-purple-500 font-bold">Price: $</span>
             {newTools?.price}
           </p>
           <p>

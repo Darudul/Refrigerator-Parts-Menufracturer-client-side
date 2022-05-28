@@ -32,7 +32,7 @@ const Tool = ({ tool }) => {
         <h2 className="text-xl text-indigo-700 font-bold"> {name}</h2>
         <p>{description}</p>
         <p>
-          <span className="text-indigo-700 font-bold">Price: </span>
+          <span className="text-indigo-700 font-bold">Price: $</span>
           {price}
         </p>
         <p>
