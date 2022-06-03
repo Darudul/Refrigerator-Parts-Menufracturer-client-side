@@ -28,6 +28,8 @@ import Payment from "./Pages/DashBoard/Payment";
 import Welcome from "./Pages/DashBoard/Welcome";
 import MyPortfolio2 from "./Pages/MyPortfolio2/MyPortfolio2";
 
+// private to public
+
 function App() {
   return (
     <div className="">
